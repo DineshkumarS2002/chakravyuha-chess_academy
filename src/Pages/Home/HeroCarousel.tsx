@@ -34,25 +34,66 @@ const HeroCarousel: React.FC = () => {
 
           <div className="hero-overlay elementor-background-overlay" />
           <div className="container">
+            {/* Navbar */}
             <div className="row">
-              <div className="col py-4 px-5 navhover">
+              <div className="col py-3 px-5 z-3">
                 <Navbar />
               </div>
             </div>
-            <div className="row">
-              <div className="col">
+
+            {/* Content */}
+            <div className="row ">
+              <div className="col  py-4">
                 <div className="hero-content">
-                  <button className="hero-btn">Join Now</button>
-                  <h4>Welcome to Chakravyuha Chess Academy</h4>
-                  <h1>
-                    Think Like <span>Grandmaster</span>
+                  <button
+                    className="hero-btn fw-bold mb-3"
+                    style={{
+                      fontSize: "clamp(14px, 2.5vw, 18px)",
+                      padding: "0.5rem 1.25rem",
+                    }}
+                  >
+                    Join Now
+                  </button>
+
+                  <h4
+                    className="mb-2"
+                    style={{ fontSize: "clamp(18px, 2vw, 26px)" }}
+                  >
+                    Welcome to Chakravyuha Chess Academy
+                  </h4>
+
+                  <h1
+                    className="fw-bold mb-3"
+                    style={{
+                      fontSize: "clamp(28px, 6vw, 60px)",
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    Think Like <span className="text-warning">Grandmaster</span>
                   </h1>
-                  <p>
+
+                  <p
+                    className="mb-4 mx-auto"
+                    style={{
+                      fontSize: "clamp(14px, 2vw, 16px)",
+                      maxWidth: "800px",
+                      lineHeight: 1.6,
+                    }}
+                  >
                     Do you want to learn chess? Chakravyuha Chess Academy offers
-                    customized chess training for Basic, Intermediate and
+                    customized chess training for Basic, Intermediate, and
                     Advanced level students.
                   </p>
-                  <a href="#" className="hero-link ">
+
+                  <a
+                    href="#"
+                    className="hero-link text-decoration-none"
+                    style={{
+                      fontSize: "clamp(14px, 2vw, 16px)",
+                      fontWeight: "500",
+                      color: "#fff",
+                    }}
+                  >
                     Learn More →
                   </a>
                 </div>

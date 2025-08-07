@@ -1,0 +1,46 @@
+footer {
+  background-color: #19191a;
+  padding: 2rem 0;
+}
+footer a {
+  text-decoration: none;
+  transition: color 0.3s;
+  color: #BDBDBD;;
+}
+footer a:hover {
+  color: #ffc107;
+}
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+  color: #fff !important;
+}
+
+.icon:hover {
+  transform: scale(1.12);
+  filter: brightness(1.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  color: #fff !important;
+}
+
+.social-facebook {
+  background: #3b5998;
+}
+.social-twitter {
+  background: #1da1f2;
+}
+.social-instagram {
+  background: #e4405f;
+}
+.social-youtube {
+  background: #ff0000;
+}

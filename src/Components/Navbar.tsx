@@ -74,15 +74,18 @@ const Navbar: React.FC = () => {
   return (
     <>
       <div className="px-0">
-        <nav className="navbar navbar-expand-lg glass-navbar px-4 py-4">
-          <a
-            className="navbar-brand d-flex align-items-center text-white fw-bold lh-sm"
-            href="#"
-          >
-            Chakravyuha
-            <br />
-            Chess Academy
-          </a>
+        <nav className="navbar navbar-expand-lg glass-navbar px-3 py-4">
+          <div className="bg-black p-2">
+            <a
+              className="navbar-brand  d-flex align-items-center text-white fw-bold lh-sm"
+              href="#"
+              style={{ fontSize: "24px" }}
+            >
+              CHAKRAVYUHA
+              <br />
+              CHESS ACADEMY
+            </a>
+          </div>
 
           <button
             className="navbar-toggler border-0"
