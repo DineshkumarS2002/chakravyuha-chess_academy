@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import "../Style/Navbar.css";
+import companylogo from "../assets/companylogo.jpg";
 import arrow_icon from "../assets/arrow-icon.png";
 
 const Navbar: React.FC = () => {
@@ -75,15 +77,12 @@ const Navbar: React.FC = () => {
     <>
       <div className="px-0">
         <nav className="navbar navbar-expand-lg glass-navbar px-3 py-4">
-          <div className="bg-black p-2">
+          <div className="">
             <a
               className="navbar-brand  d-flex align-items-center text-white fw-bold lh-sm"
               href="#"
-              style={{ fontSize: "24px" }}
             >
-              CHAKRAVYUHA
-              <br />
-              CHESS ACADEMY
+              <img src={companylogo} alt="" />
             </a>
           </div>
 

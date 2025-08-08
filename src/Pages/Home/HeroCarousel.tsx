@@ -4,6 +4,7 @@ import image2 from "../../assets/Carousel 2.jpeg";
 import image3 from "../../assets/Carousel 3.jpeg";
 import "../../Style/HeroCarousel.css";
 import Navbar from "../../Components/Navbar";
+import ChessFeatures from "./Features";
 
 const HeroCarousel: React.FC = () => {
   const images = [image1, image2, image3];
@@ -19,73 +20,75 @@ const HeroCarousel: React.FC = () => {
   }, [images.length]);
 
   return (
-    <div className="hero-carousel">
-      {images.map((img, index) => (
-        <div
-          key={index}
-          className={`hero-slide ${index === currentIndex ? "active" : ""}`}
-        >
+    <>
+      <div className="hero-carousel">
+        {images.map((img, index) => (
           <div
-            className="hero-bg"
-            style={{
-              backgroundImage: `url(${img})`,
-            }}
-          ></div>
+            key={index}
+            className={`hero-slide ${index === currentIndex ? "active" : ""}`}
+          >
+            <div
+              className="hero-bg"
+              style={{
+                backgroundImage: `url(${img})`,
+              }}
+            ></div>
 
-          <div className="hero-overlay elementor-background-overlay" />
-          <div className="container">
-            {/* Navbar */}
-            <div className="row">
-              <div className="col py-3 px-5 z-3">
-                <Navbar />
+            <div className="hero-overlay elementor-background-overlay" />
+            <div className="container">
+              {/* Navbar */}
+              <div className="row">
+                <div className="col py-3 px-2 px-lg-5 z-3">
+                  <Navbar />
+                </div>
               </div>
-            </div>
 
-            {/* Content */}
-            <div className="row ">
-              <div className="col  py-4">
-                <div className="hero-content">
-                  <button
-                    className="hero-btn fw-bold mb-3"
-                    style={{
-                      fontSize: "clamp(14px, 2.5vw, 18px)",
-                      padding: "0.5rem 1.25rem",
-                    }}
-                  >
-                    Join Now
-                  </button>
+              {/* Content */}
+              <div className="row ">
+                <div className="col py-4">
+                  <div className="hero-content">
+                    <button
+                      className="hero-btn fw-bold mb-3"
+                      style={{
+                        fontSize: "clamp(14px, 2.5vw, 18px)",
+                        padding: "0.5rem 1.25rem",
+                      }}
+                    >
+                      Join Now
+                    </button>
 
-                  <h4
-                    className="mb-2"
-                    style={{ fontSize: "clamp(18px, 2vw, 26px)" }}
-                  >
-                    Welcome to Chakravyuha Chess Academy
-                  </h4>
+                    <h4
+                      className="mb-2"
+                      style={{ fontSize: "clamp(18px, 2vw, 26px)" }}
+                    >
+                      Welcome to Chakravyuha Chess Academy
+                    </h4>
 
-                  <h1
-                    className="fw-bold mb-3"
-                    style={{
-                      fontSize: "clamp(28px, 6vw, 60px)",
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    Think Like <span className="text-warning">Grandmaster</span>
-                  </h1>
+                    <h1
+                      className="fw-bold mb-3"
+                      style={{
+                        fontSize: "clamp(28px, 6vw, 60px)",
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      Think Like{" "}
+                      <span className="text-warning">Grandmaster</span>
+                    </h1>
 
-                  <p
-                    className="mb-4 mx-auto"
-                    style={{
-                      fontSize: "clamp(14px, 2vw, 16px)",
-                      maxWidth: "800px",
-                      lineHeight: 1.6,
-                    }}
-                  >
-                    Do you want to learn chess? Chakravyuha Chess Academy offers
-                    customized chess training for Basic, Intermediate, and
-                    Advanced level students.
-                  </p>
+                    <p
+                      className="mb-4 mx-auto"
+                      style={{
+                        fontSize: "clamp(14px, 2vw, 16px)",
+                        maxWidth: "800px",
+                        lineHeight: 1.6,
+                      }}
+                    >
+                      Do you want to learn chess? Chakravyuha Chess Academy
+                      offers customized chess training for Basic, Intermediate,
+                      and Advanced level students.
+                    </p>
 
-                  <a
+                    {/* <a
                     href="#"
                     className="hero-link text-decoration-none"
                     style={{
@@ -95,14 +98,18 @@ const HeroCarousel: React.FC = () => {
                     }}
                   >
                     Learn More →
-                  </a>
+                  </a> */}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+      <div className="hero-carousel-features">
+        <ChessFeatures />
+      </div>
+    </>
   );
 };
 

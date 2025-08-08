@@ -8,75 +8,76 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="container-fluid py-3 py-sm-4 py-lg-5">
-      <div className="row align-items-center justify-content-center ">
+    <div className="container-fluid py-5">
+      <div className="row align-items-center justify-content-center">
         {/* Image Section */}
-        <div className="col-12 col-lg-6 ">
+        <div className="col-12 col-lg-6 mb-4 mb-lg-0">
           <div role="img" aria-label="Chess academy image">
-            <img src={aboutbg} className="img-fluid" alt="..." style={{height:"80vh",width:"100%"}}></img>
+            <img
+              src={aboutbg}
+              className="img-fluid w-100"
+              alt="About Chakravyuha Chess Academy"
+              style={{
+                maxHeight: "80vh",
+                objectFit: "cover",
+                // borderRadius: "8px",
+              }}
+            />
           </div>
         </div>
 
         {/* Content Section */}
-        <div className="col-12 col-lg-6  px-sm-4 px-lg-5 order-2 order-lg-2">
+        <div className="col-12 col-lg-6 px-4">
           {/* Heading */}
-          <h3 className="mb-2 mb-sm-3 fs-5 fs-sm-4 fs-lg-3">About Us</h3>
+          <h3
+            className="text-uppercase mb-3 fs-5 "
+            style={{ color: "#CEA82A" }}
+          >
+            About Us
+          </h3>
 
           {/* Main Title */}
           <p
-            className="mb-3 mb-sm-4"
+            className="mb-4"
             style={{
-              fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
-              fontWeight: 600,
-              lineHeight: "1.2",
+              fontSize: "clamp(1.8rem, 4vw, 2.5rem)",
+              fontWeight: "700",
+              lineHeight: "1.3",
             }}
           >
-            We are one of the <br className="d-none d-sm-block" />
-            <span className="d-sm-none"> </span>Best Chess Academy
+            We are one of the <br className="d-none d-md-block" />
+            <span style={{ color: "#CEA82A" }}>Best Chess Academies</span>
           </p>
 
           {/* Description */}
           <p
-            className="mb-3 mb-sm-4"
+            className="mb-4 text-muted"
             style={{
-              fontSize: "clamp(14px, 2.5vw, 16px)",
-              color: "#787878",
-              lineHeight: "1.6",
+              fontSize: "clamp(1rem, 2vw, 1.1rem)",
+              lineHeight: "1.8",
             }}
           >
             The Chakravyuha Chess Academy has trained chess players to National,
-            State and District levels, and we have trained more than 40
-            FIDE-rated players and many National players, State Champions and
-            State top players.
+            State, and District levels. We've produced over 40 FIDE-rated
+            players and numerous national and state champions.
           </p>
 
           {/* Statistics Section */}
-          <div className="d-flex flex-column flex-sm-row gap-3 gap-sm-4 gap-lg-5 align-items-start mb-3 mb-sm-4">
+          <div className="d-flex flex-wrap gap-4 mb-4">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center text-sm-start">
-                <p className="mb-0" style={{ color: "#787878" }}>
-                  <span
-                    style={{
-                      fontSize: "clamp(2rem, 5vw, 2.5rem)",
-                      color: "black",
-                      fontWeight: "600",
-                    }}
-                  >
-                    {stat.value}
-                  </span>
-                  <span
-                    className="fw-bold ms-1"
-                    style={{
-                      color: "#CEA82A",
-                      fontSize: "clamp(1.2rem, 3vw, 1.5rem)",
-                    }}
-                  >
-                    +
-                  </span>
-                  <br />
-                  <span style={{ fontSize: "clamp(14px, 2.5vw, 16px)" }}>
-                    {stat.label}
-                  </span>
+              <div key={index} className="text-start">
+                <h2
+                  className="fw-bold mb-1"
+                  style={{ fontSize: "clamp(2rem, 5vw, 2.5rem)" }}
+                >
+                  {stat.value}
+                  <span style={{ color: "#CEA82A" }}>+</span>
+                </h2>
+                <p
+                  className="text-muted mb-0"
+                  style={{ fontSize: "clamp(0.9rem, 2vw, 1rem)" }}
+                >
+                  {stat.label}
                 </p>
               </div>
             ))}
@@ -84,7 +85,7 @@ const AboutUs = () => {
 
           {/* Button */}
           <button
-            className="px-3 px-sm-4 py-2 fw-bold"
+            className="btn btn-warning px-4 py-2 fw-bold rounded-pill"
             aria-label="Learn more about Chakravyuha Chess Academy"
           >
             More Details →

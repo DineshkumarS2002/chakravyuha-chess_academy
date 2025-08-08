@@ -17,7 +17,7 @@ const Footer = () => {
               intermediate players.
             </p>
             <ul className="list-unstyled" style={{ color: "#BDBDBD" }}>
-              <li className="mb-2">+91 70940 01240</li>
+              <li className="mb-2">+91 88702 21915</li>
               <li className="mb-2">chakravyuhachessacademy@gmail.com</li>
               <li>Coimbatore,Tamil Nadu</li>
             </ul>

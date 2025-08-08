@@ -143,3 +143,13 @@
 .navhover {
   z-index: 10;
 }
+.hero-carousel-features{
+  position: relative;
+  bottom: 120px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
