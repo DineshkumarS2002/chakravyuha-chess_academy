@@ -8,7 +8,7 @@ import {
   Spinner,
   Alert,
 } from "react-bootstrap";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+// import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import "../../Style/Contactsection.css";
 
 const ContactSection = () => {
@@ -58,7 +58,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="container px-3 px-lg-5 mt-2 mt-lg-5 contact-section py-5">
+    <section className="container px-3 px-lg-5  mt-lg-5 contact-section py-5">
       <Container>
         <Row className="contact-wrapper">
           {/* Left Section */}
@@ -67,58 +67,77 @@ const ContactSection = () => {
             className="contact-left text-white d-flex flex-column justify-content-between p-4 p-lg-5"
           >
             <div>
-              <h5 className="mb-2 fs-4 fs-lg-1 fw-bold" style={{ color: "#CEA82A" }}>
-                Contact Us
-              </h5>
-              <h2 className="fw-bold mt-3 display-4">Get in Touch</h2>
-              <p className="mt-3 fs-5 fs-lg-5">
+              <h5 className="mb-2 fw-bold contact-heading">Contact Us</h5>
+              <h2 className="fw-bold mt-3 contact-title">Get in Touch</h2>
+              <p className="mt-3 contact-desc">
                 Are you interested in enrolling your child at Chakravyuha Chess
                 Academy? Fill the form and we'll get in touch.
               </p>
 
               <div className="contact-info mt-4">
-                <p className="fs-6 fs-lg-5">
-                  <FaPhone className="me-2" style={{ color: "#CEA82A" }} />
-                  +91 88702 21915
-                </p>
-                <p className="fs-6 fs-lg-5">
-                  <FaEnvelope className="me-2" style={{ color: "#CEA82A" }} />
-                  chakravyuhachessacademy@gmail.com
-                </p>
-                <p className="fs-6 fs-lg-5">
-                  <FaMapMarkerAlt
-                    className="me-2"
-                    style={{ color: "#CEA82A" }}
-                  />
-                  Main Branch: 36/C6, Rajaji Nagar, 2nd Cross, Hotel Laya Inn
-                  Back Side, Ariyalur-621-713.
-                </p>
-              </div>
-            </div>
+                <ul className="list-unstyled">
+                  <li className="mb-2 d-flex align-items-center gap-2">
+                    <a href="tel:+918870221915">
+                      {" "}
+                      <i
+                        className="fa-solid fa-phone"
+                        style={{ color: "#CEA82A" }}
+                      ></i>
+                    </a>
+                    <a
+                      href="tel:+918870221915"
+                      className="fw-semibold text-decoration-none"
+                      style={{ color: "#fff" }}
+                    >
+                      +91 88702 21915
+                    </a>
+                  </li>
 
-            <div className="d-flex mt-4">
-              <a href="#" className="icon social-facebook me-3">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" className="icon social-twitter me-3">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="#" className="icon social-instagram me-3">
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a href="#" className="icon social-youtube">
-                <i className="fab fa-youtube"></i>
-              </a>
+                  <li className="mb-2 d-flex align-items-center gap-2">
+                    <a href="mailto:chakravyuhachessacademy@gmail.com">
+                      {" "}
+                      <i
+                        className="fa-solid fa-envelope"
+                        style={{ color: "#CEA82A" }}
+                      ></i>
+                    </a>
+                    <a
+                      href="mailto:chakravyuhachessacademy@gmail.com"
+                      className="fw-semibold text-decoration-none"
+                      style={{ color: "#fff" }}
+                    >
+                      chakravyuhachessacademy@gmail.com
+                    </a>
+                  </li>
+
+                  <li className="d-flex align-items-center gap-2">
+                    <a href="https://www.google.com/maps?q=Coimbatore,+Tamil+Nadu">
+                      <i
+                        className="fa-solid fa-location-dot"
+                        style={{ color: "#CEA82A" }}
+                      ></i>
+                    </a>
+                    <a
+                      href="https://www.google.com/maps?q=Coimbatore,+Tamil+Nadu"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="fw-semibold text-decoration-none"
+                      style={{ color: "#fff" }}
+                    >
+                      Coimbatore, Tamil Nadu
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </Col>
 
           {/* Right Section */}
           <Col md={6} className="contact-form p-4 p-lg-5 bg-white">
             <Form onSubmit={handleSubmit}>
-              {/* Name */}
               <Form.Group className="mb-3">
-                <Form.Label className="fs-6 fs-lg-5 fw-semibold">
-                  Name <span style={{ color: "red" }}>*</span>
+                <Form.Label className="fw-semibold">
+                  Name <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   className="input"
@@ -131,10 +150,9 @@ const ContactSection = () => {
                 />
               </Form.Group>
 
-              {/* Email */}
               <Form.Group className="mb-3">
-                <Form.Label className="fs-6 fs-lg-5 fw-semibold">
-                  Email <span style={{ color: "red" }}>*</span>
+                <Form.Label className="fw-semibold">
+                  Email <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   className="input"
@@ -147,15 +165,14 @@ const ContactSection = () => {
                 />
               </Form.Group>
 
-              {/* Phone */}
               <Form.Group className="mb-3">
-                <Form.Label className="fs-6 fs-lg-5 fw-semibold">
-                  Phone Number <span style={{ color: "red" }}>*</span>
+                <Form.Label className="fw-semibold">
+                  Phone Number <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   className="input"
                   type="tel"
-                  name="phonenumber" 
+                  name="phonenumber"
                   placeholder="Your Phone Number"
                   value={formData.phonenumber}
                   onChange={handleChange}
@@ -163,10 +180,9 @@ const ContactSection = () => {
                 />
               </Form.Group>
 
-              {/* Message */}
               <Form.Group className="mb-3">
-                <Form.Label className="fs-6 fs-lg-5 fw-semibold">
-                  Comments / Questions <span style={{ color: "red" }}>*</span>
+                <Form.Label className="fw-semibold">
+                  Comments / Questions <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   className="input"
@@ -182,7 +198,7 @@ const ContactSection = () => {
 
               <Button
                 type="submit"
-                className="text-black fw-semibold fs-5 shadow px-4 py-3 mt-2"
+                className="text-black fw-semibold shadow px-4 py-3 mt-2 w-100 w-md-auto"
                 disabled={submitting}
               >
                 {submitting ? (
@@ -201,6 +217,7 @@ const ContactSection = () => {
                   "Send Message"
                 )}
               </Button>
+
               {submitted && (
                 <Alert variant="success" className="mt-3">
                   Thank you! Your message has been submitted.

@@ -9,9 +9,9 @@ import ContactSection from "./Pages/Contact/ContactUs";
 import Classpage from "./Pages/Home/Classpage";
 import Blog from "./Pages/Blog/Blog";
 import WhatsappMessage from "./Pages/whatsapp.tsx/WhatsappMessage";
-// import BeginnerCourse from "./Pages/Courses/BeginnerCourse";
-// import IntermediateCourse from "./Pages/Courses/IntermediateCourse";
-// import AdvancedCourse from "./Pages/Courses/AdvancedCourse";
+import BeginnerCourse from "./Pages/Courses/BeginnerCourse";
+import IntermediateCourse from "./Pages/Courses/IntermediateCourse";
+import AdvancedCourse from "./Pages/Courses/AdvancedChessCourse";
 
 function App() {
   return (
@@ -43,7 +43,6 @@ function App() {
               <div>
                 <WhatsappMessage />
               </div>
-              <Footer />
             </>
           }
         />
@@ -53,10 +52,11 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<ContactSection />} />
         <Route path="/branches" element={<BranchesSection />} />
-        {/* <Route path="/courses/beginner" element={<BeginnerCourse />} />
+        <Route path="/courses/beginner" element={<BeginnerCourse />} />
         <Route path="/courses/intermediate" element={<IntermediateCourse />} />
-        <Route path="/courses/advanced" element={<AdvancedCourse />} /> */}
+        <Route path="/courses/advanced" element={<AdvancedCourse />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

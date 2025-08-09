@@ -6,7 +6,6 @@ import blogimg3 from "../../assets/Blogimg3.jpg";
 
 interface BlogPost {
   id: number;
-
   title: string;
   description: string | JSX.Element;
   image: string;
@@ -15,7 +14,6 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: 1,
-
     title: "Chess – A Game that Enhances Intelligence",
     description:
       "Chess is not just a game; it is a workout for the brain. In our academy, children learn to think with focus, plan strategically, and develop a competitive spirit. With quality training, they excel not only in academics but also in life.",
@@ -23,7 +21,6 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: 2,
-
     title: "5 Secrets to Winning a Chess Match",
     description: (
       <ul className="mb-0">
@@ -38,7 +35,6 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: 3,
-
     title: "Recent Academy Achievements",
     description:
       "In last month’s district chess tournament, our students won 3 gold, 2 silver, and 1 bronze medals. 🏆 Best Player Award — Adithya (U14) 🥈 Second Place — Nandhini (U12) These victories are the result of our structured training and dedicated hard work.",
@@ -48,7 +44,7 @@ const blogPosts: BlogPost[] = [
 
 const Blog: React.FC = () => {
   return (
-    <section className="latest-blog-section py-5 ">
+    <section className="latest-blog-section py-5">
       <div className="container">
         {/* Heading */}
         <p className="section-subtitle text-center fs-4">
@@ -63,10 +59,10 @@ const Blog: React.FC = () => {
         </p>
 
         {/* Blog Cards */}
-        <div className="container row g-4 ">
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 px-4 px-md-5">
           {blogPosts.map((post) => (
-            <div key={post.id} className=" col-lg-4 col-md-6 col-12  ">
-              <div className=" card blog-card  h-100 shadow-sm p-4">
+            <div key={post.id} className="col">
+              <div className="card blog-card h-100 shadow-sm p-4">
                 <img
                   src={post.image}
                   className="card-img-top"

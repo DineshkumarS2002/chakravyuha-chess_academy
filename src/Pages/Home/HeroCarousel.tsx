@@ -47,16 +47,6 @@ const HeroCarousel: React.FC = () => {
               <div className="row ">
                 <div className="col py-4">
                   <div className="hero-content">
-                    <button
-                      className="hero-btn fw-bold mb-3"
-                      style={{
-                        fontSize: "clamp(14px, 2.5vw, 18px)",
-                        padding: "0.5rem 1.25rem",
-                      }}
-                    >
-                      <a href="#courses" className="text-black text-decoration-none">Join Now</a>
-                    </button>
-
                     <h4
                       className="mb-2"
                       style={{ fontSize: "clamp(18px, 2vw, 26px)" }}
@@ -87,18 +77,20 @@ const HeroCarousel: React.FC = () => {
                       offers customized chess training for Basic, Intermediate,
                       and Advanced level students.
                     </p>
-
-                    {/* <a
-                    href="#"
-                    className="hero-link text-decoration-none"
-                    style={{
-                      fontSize: "clamp(14px, 2vw, 16px)",
-                      fontWeight: "500",
-                      color: "#fff",
-                    }}
-                  >
-                    Learn More →
-                  </a> */}
+                    <button
+                      className="hero-btn fw-bold mb-3"
+                      style={{
+                        fontSize: "clamp(14px, 2.5vw, 18px)",
+                        padding: "0.5rem 1.25rem",
+                      }}
+                    >
+                      <a
+                        href="#courses"
+                        className="text-black text-decoration-none"
+                      >
+                        Join Now
+                      </a>
+                    </button>
                   </div>
                 </div>
               </div>

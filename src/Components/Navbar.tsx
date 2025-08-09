@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback, useMemo } from "react";
 import "../Style/Navbar.css";
 import companylogo from "../assets/companylogo.jpg";
 import arrow_icon from "../assets/arrow-icon.png";
@@ -7,21 +7,34 @@ const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
 
-  const toggleCourses = () => setIsCoursesOpen((prev) => !prev);
+  const toggleCourses = useCallback(() => setIsCoursesOpen(prev => !prev), []);
+  const closeMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen(false);
+    setIsCoursesOpen(false);
+  }, []);
 
+  // Handle body overflow and reset on unmount
   useEffect(() => {
-    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "auto";
+    const originalStyle = window.getComputedStyle(document.body).overflow;
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    }
+    
+    return () => {
+      document.body.style.overflow = originalStyle;
+    };
   }, [isMobileMenuOpen]);
 
-  const menuItems = (
+  // Memoized menu items to prevent unnecessary re-renders
+  const menuItems = useMemo(() => (
     <>
       <li className="nav-item">
-        <a className="nav-link nav-hover active" href="#hero">
+        <a className="nav-link nav-hover active" href="#hero" onClick={closeMobileMenu}>
           Home
         </a>
       </li>
       <li className="nav-item">
-        <a className="nav-link nav-hover" href="#about">
+        <a className="nav-link nav-hover" href="#about" onClick={closeMobileMenu}>
           About Us
         </a>
       </li>
@@ -43,17 +56,17 @@ const Navbar: React.FC = () => {
         {isCoursesOpen && (
           <ul className="custom-dropdown bg-dark p-2 rounded mt-2 position-absolute z-5">
             <li>
-              <a className="dropdown-item custom-dropdown-item" href="#courses">
+              <a className="dropdown-item custom-dropdown-item" href="#courses" onClick={closeMobileMenu}>
                 Beginner Chess Course
               </a>
             </li>
             <li>
-              <a className="dropdown-item custom-dropdown-item" href="#courses">
+              <a className="dropdown-item custom-dropdown-item" href="#courses" onClick={closeMobileMenu}>
                 Intermediate Chess Course
               </a>
             </li>
             <li>
-              <a className="dropdown-item custom-dropdown-item" href="#courses">
+              <a className="dropdown-item custom-dropdown-item" href="#courses" onClick={closeMobileMenu}>
                 Advanced Chess Course
               </a>
             </li>
@@ -61,17 +74,17 @@ const Navbar: React.FC = () => {
         )}
       </li>
       <li className="nav-item">
-        <a className="nav-link nav-hover" href="#blog">
+        <a className="nav-link nav-hover" href="#blog" onClick={closeMobileMenu}>
           Blog
         </a>
       </li>
       <li className="nav-item">
-        <a className="nav-link nav-hover" href="#contact">
+        <a className="nav-link nav-hover" href="#contact" onClick={closeMobileMenu}>
           Contact
         </a>
       </li>
     </>
-  );
+  ), [isCoursesOpen, toggleCourses, closeMobileMenu]);
 
   return (
     <>
@@ -81,6 +94,7 @@ const Navbar: React.FC = () => {
             <a
               className="navbar-brand  d-flex align-items-center text-white fw-bold lh-sm"
               href="#Home"
+              onClick={closeMobileMenu}
             >
               <img src={companylogo} alt="" className="company-logo" />
             </a>
@@ -100,7 +114,7 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="d-none d-lg-block">
-            <a href="#contact" className="hero-btn px-4 py-3">
+            <a href="#contact" className="hero-btn px-4 py-3" onClick={closeMobileMenu}>
               Get Started
             </a>
           </div>
@@ -115,14 +129,16 @@ const Navbar: React.FC = () => {
           </span>
           <button
             className="btn text-white fs-6"
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={closeMobileMenu}
             aria-label="Close Menu"
           >
             &times;
           </button>
         </div>
 
-        <ul className="nav flex-column mt-4 px-3">{menuItems}</ul>
+        <ul className="nav flex-column mt-4 px-3">
+          {menuItems}
+        </ul>
       </div>
     </>
   );

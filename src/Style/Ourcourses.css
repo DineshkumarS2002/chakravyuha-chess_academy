@@ -1,0 +1,33 @@
+.section-subtitle {
+  color: #cea82a;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  line-height: 1.3;
+}
+
+.section-description {
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  color: #6c757d;
+}
+
+.course-title {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+.course-meta {
+  font-size: clamp(0.75rem, 1.8vw, 0.9rem);
+}
+
+.course-rating {
+  font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+}
+
+.card {
+  transition: transform 0.2s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-5px);
+}

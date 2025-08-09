@@ -1,4 +1,4 @@
-import whatsappicon from "../../assets/whtaspp.jpg";
+import whatsappicon from "../../assets/whatsapp.png";
 import "../../Style/WhatsappMessage.css";
 
 const WhatsappMessage = () => {

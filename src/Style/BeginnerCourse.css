@@ -1,0 +1,126 @@
+
+.course-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.course-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.learn-list ul {
+  padding-left: 1.5rem; /* slightly increased for readability */
+}
+
+.learn-list li {
+  margin-bottom: 0.5rem;
+  list-style-type: none; /* you might want to add custom bullet with ::before */
+  position: relative;
+}
+
+.learn-list li::before {
+  content: "✓";
+  color: #d4a017;
+  margin-right: 0.5rem;
+  position: absolute;
+  left: -1.2rem;
+  font-weight: bold;
+}
+
+.pricing-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d4a017;
+  margin-bottom: 0.5rem;
+}
+
+.sessions {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.more-courses-card {
+  background: #000;
+  border-radius: 8px;
+  color: white;
+  padding: 1rem;
+}
+
+/* Hero Section */
+
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  height: 50vh;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Responsive font size with clamp */
+.hero-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+  margin-bottom: 1rem;
+}
+
+/* Breadcrumb styling */
+.breadcrumb {
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  color: white;
+  margin-top: 0.5rem;
+}
+
+
+.breadcrumb-item a {
+  color: white;
+  text-decoration: none;
+}
+
+
+.breadcrumb-item.active {
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .course-title {
+    font-size: 1.6rem;
+  }
+  .price {
+    font-size: 1.6rem;
+  }
+  .hero-section {
+    padding: 40px 15px;
+  }
+  .hero-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 30px 10px;
+  }
+  .hero-title {
+    font-size: clamp(1.2rem, 6vw, 1.8rem);
+  }
+}

@@ -1,15 +1,17 @@
 .classpage-hero {
-  background-image: url("../assets/classpageimg.jpg"); 
+  background-image: url("../assets/classpageimg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   min-height: 100vh;
-  position: relative;
+  display: flex; /* Ensures vertical centering if needed */
+  align-items: center;
   padding: 3rem 1rem;
   clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
-  z-index: 1;
   text-align: left;
+  position: relative;
+  z-index: 1;
 }
 
 .classpage-content {
@@ -17,27 +19,49 @@
   margin-left: auto;
 }
 
+/* Title */
 .classpage-title {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   line-height: 1.2;
+  margin-bottom: 1rem;
 }
 
 .classpage-highlight {
-  color: #CEA82A;
+  color: #cea82a;
 }
 
+/* Subtitle */
 .classpage-subtitle {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
+/* Button */
 .classpage-button {
-  background-color: #CEA82A;
+  background-color: #cea82a;
   border: none;
-  transition: 0.3s ease;
+  padding: 0.6rem 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 600;
+  color: black;
+  transition: background-color 0.3s ease;
 }
 
 .classpage-button:hover {
   background-color: #b89020;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .classpage-hero {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .classpage-content {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

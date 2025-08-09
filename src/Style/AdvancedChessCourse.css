@@ -1,0 +1,82 @@
+/* Navbar */
+.custom-navbar {
+  background-color: #1c1c1c;
+}
+
+.custom-navbar .nav-link {
+  color: white !important;
+  font-weight: 500;
+}
+
+.get-started-btn {
+  background-color: #d4af37;
+  border: none;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero-section {
+  background: url("/chess-hero.jpg") center/cover no-repeat;
+  min-height: 220px;
+  padding: 40px 0;
+}
+
+.hero-title {
+  font-size: 2rem;
+}
+
+@media (min-width: 992px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Section Titles */
+.section-title {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Price Card */
+.price-card {
+  border: none;
+}
+
+.price-text {
+  color: #d4af37;
+  font-weight: bold;
+}
+
+.join-btn {
+  background-color: #d4af37;
+  border: none;
+  font-weight: bold;
+}
+
+/* More Courses Card */
+.more-courses-card {
+  background-color: #1c1c1c;
+  border: none;
+}
+
+.view-more-btn {
+  background-color: #d4af37;
+  border: none;
+  font-weight: bold;
+}
+
+/* List Styling */
+.custom-list {
+  padding-left: 1.2rem;
+}
+
+.custom-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.25rem;
+  }
+}

@@ -1,0 +1,59 @@
+.course-detail-wrapper {
+  font-family: "Georgia", serif;
+  color: #333;
+}
+
+.hero-section {
+  background: url("https://via.placeholder.com/1500x300") center/cover no-repeat;
+  color: white;
+  padding: 50px 20px;
+}
+
+.course-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.breadcrumb {
+  font-size: 0.9rem;
+}
+
+.section-heading {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.check-icon {
+  color: green;
+  margin-right: 8px;
+}
+
+.sidebar-card {
+  background: #fff;
+  border-radius: 8px;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #d4a017;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.sidebar-list li {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .course-title {
+    font-size: 1.5rem;
+  }
+  .price {
+    font-size: 1.2rem;
+  }
+}

@@ -23,11 +23,11 @@ const Footer = () => {
                   <i
                     className="fa-solid fa-phone"
                     style={{ color: "#CEA82A" }}
-                  ></i>{" "}
+                  ></i>
                 </a>
                 <a
                   href="tel:+918870221915"
-                  className="fw-bold text-decoration-none"
+                  className="fw-semibold text-decoration-none"
                   style={{ color: "#BDBDBD" }}
                 >
                   +91 88702 21915
@@ -44,7 +44,7 @@ const Footer = () => {
                 </a>
                 <a
                   href="mailto:chakravyuhachessacademy@gmail.com"
-                  className="fw-bold text-decoration-none"
+                  className="fw-semibold text-decoration-none"
                   style={{ color: "#BDBDBD" }}
                 >
                   chakravyuhachessacademy@gmail.com
@@ -62,7 +62,7 @@ const Footer = () => {
                   href="https://www.google.com/maps?q=Coimbatore,+Tamil+Nadu"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="fw-bold text-decoration-none"
+                  className="fw-semibold text-decoration-none"
                   style={{ color: "#BDBDBD" }}
                 >
                   Coimbatore, Tamil Nadu
@@ -132,9 +132,14 @@ const Footer = () => {
               <a href="#" className="icon social-facebook me-3">
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="#" className="icon social-twitter me-3">
-                <i className="fab fa-twitter"></i>
+              <a
+                href="#"
+                className="icon social-x me-3 box-shadow"
+                aria-label="X (Twitter)"
+              >
+                <i className="fa-brands fa-x-twitter"></i>
               </a>
+
               <a href="#" className="icon social-instagram me-3">
                 <i className="fab fa-instagram"></i>
               </a>
@@ -148,8 +153,8 @@ const Footer = () => {
         {/* Copyright Section */}
         <Row>
           <Col>
-            <hr className=" my-3" />
-            <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <hr className="my-3" />
+            <div className="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
               <p className="mb-2 mb-md-0" style={{ color: "#333333" }}>
                 Chakravyuha Chess Academy, Coimbatore, Tamil Nadu
               </p>
