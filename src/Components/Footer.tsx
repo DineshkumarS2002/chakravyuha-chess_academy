@@ -17,9 +17,57 @@ const Footer = () => {
               intermediate players.
             </p>
             <ul className="list-unstyled" style={{ color: "#BDBDBD" }}>
-              <li className="mb-2">+91 88702 21915</li>
-              <li className="mb-2">chakravyuhachessacademy@gmail.com</li>
-              <li>Coimbatore,Tamil Nadu</li>
+              <li className="mb-2 d-flex align-items-center gap-2">
+                <a href="tel:+918870221915">
+                  {" "}
+                  <i
+                    className="fa-solid fa-phone"
+                    style={{ color: "#CEA82A" }}
+                  ></i>{" "}
+                </a>
+                <a
+                  href="tel:+918870221915"
+                  className="fw-bold text-decoration-none"
+                  style={{ color: "#BDBDBD" }}
+                >
+                  +91 88702 21915
+                </a>
+              </li>
+
+              <li className="mb-2 d-flex align-items-center gap-2">
+                <a href="mailto:chakravyuhachessacademy@gmail.com">
+                  {" "}
+                  <i
+                    className="fa-solid fa-envelope"
+                    style={{ color: "#CEA82A" }}
+                  ></i>
+                </a>
+                <a
+                  href="mailto:chakravyuhachessacademy@gmail.com"
+                  className="fw-bold text-decoration-none"
+                  style={{ color: "#BDBDBD" }}
+                >
+                  chakravyuhachessacademy@gmail.com
+                </a>
+              </li>
+
+              <li className="d-flex align-items-center gap-2">
+                <a href="https://www.google.com/maps?q=Coimbatore,+Tamil+Nadu">
+                  <i
+                    className="fa-solid fa-location-dot"
+                    style={{ color: "#CEA82A" }}
+                  ></i>
+                </a>
+                <a
+                  href="https://www.google.com/maps?q=Coimbatore,+Tamil+Nadu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="fw-bold text-decoration-none"
+                  style={{ color: "#BDBDBD" }}
+                >
+                  Coimbatore, Tamil Nadu
+                </a>
+              </li>
             </ul>
           </Col>
 
@@ -28,22 +76,27 @@ const Footer = () => {
             <h2 className="h3 mb-3">Quick Links</h2>
             <ul className="list-unstyled">
               <li className="mb-2">
-                <a href="#" className=" text-decoration-none">
+                <a href="#home" className="text-decoration-none">
                   Home
                 </a>
               </li>
               <li className="mb-2">
-                <a href="#" className=" text-decoration-none">
+                <a href="#about" className="text-decoration-none">
                   About Us
                 </a>
               </li>
               <li className="mb-2">
-                <a href="#" className=" text-decoration-none">
+                <a href="#courses" className="text-decoration-none">
                   Courses
                 </a>
               </li>
+              <li className="mb-2">
+                <a href="#blog" className="text-decoration-none">
+                  Blog
+                </a>
+              </li>
               <li>
-                <a href="#" className=" text-decoration-none">
+                <a href="#contact" className="text-decoration-none">
                   Contact
                 </a>
               </li>

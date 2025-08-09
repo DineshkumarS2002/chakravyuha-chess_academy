@@ -1,0 +1,43 @@
+.classpage-hero {
+  background-image: url("../assets/classpageimg.jpg"); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
+  padding: 3rem 1rem;
+  clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+  z-index: 1;
+  text-align: left;
+}
+
+.classpage-content {
+  max-width: 800px;
+  margin-left: auto;
+}
+
+.classpage-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.classpage-highlight {
+  color: #CEA82A;
+}
+
+.classpage-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+}
+
+.classpage-button {
+  background-color: #CEA82A;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.classpage-button:hover {
+  background-color: #b89020;
+}

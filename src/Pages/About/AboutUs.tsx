@@ -1,6 +1,51 @@
+import { useEffect, useState } from "react";
 import aboutbg from "../../assets/Aboutimg.jpg";
 import "../../Style/About.css";
 
+// ⏱ CountUp Component
+const CountUpNumber = ({
+  end,
+  duration = 1000, // total duration in ms
+  steps = 200, // total animation steps
+}: {
+  end: number;
+  duration?: number;
+  steps?: number;
+}) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let currentStep = 0;
+    const increment = end / steps;
+    const stepTime = Math.max(Math.floor(duration / steps), 10); // minimum 10ms per step
+
+    const timer = setInterval(() => {
+      currentStep += 1;
+      setCount((prev) => {
+        const next = prev + increment;
+        return next >= end ? end : next;
+      });
+      if (currentStep >= steps) {
+        setCount(end);
+        clearInterval(timer);
+      }
+    }, stepTime);
+
+    return () => clearInterval(timer);
+  }, [end, duration, steps]);
+
+  return (
+    <h2
+      className="fw-bold mb-1"
+      style={{ fontSize: "clamp(2rem, 5vw, 2.5rem)" }}
+    >
+      {Math.round(count)}
+      <span style={{ color: "#CEA82A" }}>+</span>
+    </h2>
+  );
+};
+
+// 🧠 Main AboutUs Component
 const AboutUs = () => {
   const stats = [
     { value: 16, label: "Years Experienced" },
@@ -8,9 +53,9 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="container-fluid py-5">
+    <div className="container-fluid">
       <div className="row align-items-center justify-content-center">
-        {/* Image Section */}
+        {/* 🖼 Image Section */}
         <div className="col-12 col-lg-6 mb-4 mb-lg-0">
           <div role="img" aria-label="Chess academy image">
             <img
@@ -20,23 +65,17 @@ const AboutUs = () => {
               style={{
                 maxHeight: "80vh",
                 objectFit: "cover",
-                // borderRadius: "8px",
               }}
             />
           </div>
         </div>
 
-        {/* Content Section */}
+        {/* 📝 Content Section */}
         <div className="col-12 col-lg-6 px-4">
-          {/* Heading */}
-          <h3
-            className="text-uppercase mb-3 fs-5 "
-            style={{ color: "#CEA82A" }}
-          >
+          <h3 className="text-uppercase mb-3 fs-5" style={{ color: "#CEA82A" }}>
             About Us
           </h3>
 
-          {/* Main Title */}
           <p
             className="mb-4"
             style={{
@@ -49,7 +88,6 @@ const AboutUs = () => {
             <span style={{ color: "#CEA82A" }}>Best Chess Academies</span>
           </p>
 
-          {/* Description */}
           <p
             className="mb-4 text-muted"
             style={{
@@ -62,17 +100,11 @@ const AboutUs = () => {
             players and numerous national and state champions.
           </p>
 
-          {/* Statistics Section */}
+          {/* 🔢 Stats Section */}
           <div className="d-flex flex-wrap gap-4 mb-4">
             {stats.map((stat, index) => (
               <div key={index} className="text-start">
-                <h2
-                  className="fw-bold mb-1"
-                  style={{ fontSize: "clamp(2rem, 5vw, 2.5rem)" }}
-                >
-                  {stat.value}
-                  <span style={{ color: "#CEA82A" }}>+</span>
-                </h2>
+                <CountUpNumber end={stat.value} />
                 <p
                   className="text-muted mb-0"
                   style={{ fontSize: "clamp(0.9rem, 2vw, 1rem)" }}
@@ -83,7 +115,7 @@ const AboutUs = () => {
             ))}
           </div>
 
-          {/* Button */}
+          {/* 🟡 CTA Button */}
           <button
             className="btn btn-warning px-4 py-2 fw-bold rounded-pill"
             aria-label="Learn more about Chakravyuha Chess Academy"

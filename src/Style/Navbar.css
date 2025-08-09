@@ -136,7 +136,7 @@
 
 .carousel-content {
   position: relative;
-  z-index: 10;
+  z-index: 9999;
   color: white;
   padding: 100px 60px;
   max-width: 600px;
@@ -212,4 +212,34 @@ body.dark-mode .custom-dropdown {
 
 body.dark-mode .custom-dropdown-item:hover {
   color: #f2c744;
+}
+
+.company-logo {
+  width: 160px;
+  max-width: 60vw;
+}
+
+@media (min-width: 576px) {
+  .company-logo {
+    width: 200px;
+  }
+}
+
+@media (min-width: 992px) {
+  .company-logo {
+    width: 260px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .company-logo {
+    width: 300px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .zindex-mobile-9999 {
+    z-index: 12000 !important;
+    position: relative; /* or fixed/absolute as needed */
+  }
 }

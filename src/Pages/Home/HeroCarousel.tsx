@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import image1 from "../../assets/Carousel 1.jpeg";
-import image2 from "../../assets/Carousel 2.jpeg";
+import image2 from "../../assets/Carousel2.jpeg";
 import image3 from "../../assets/Carousel 3.jpeg";
 import "../../Style/HeroCarousel.css";
 import Navbar from "../../Components/Navbar";
@@ -54,7 +54,7 @@ const HeroCarousel: React.FC = () => {
                         padding: "0.5rem 1.25rem",
                       }}
                     >
-                      Join Now
+                      <a href="#courses" className="text-black text-decoration-none">Join Now</a>
                     </button>
 
                     <h4
@@ -78,7 +78,7 @@ const HeroCarousel: React.FC = () => {
                     <p
                       className="mb-4 mx-auto"
                       style={{
-                        fontSize: "clamp(14px, 2vw, 16px)",
+                        fontSize: "clamp(14px, 2vw, 18px)",
                         maxWidth: "800px",
                         lineHeight: 1.6,
                       }}

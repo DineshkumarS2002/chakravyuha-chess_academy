@@ -58,7 +58,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="container px-3 px-lg-5 contact-section">
+    <section className="container px-3 px-lg-5 mt-2 mt-lg-5 contact-section py-5">
       <Container>
         <Row className="contact-wrapper">
           {/* Left Section */}
@@ -67,11 +67,11 @@ const ContactSection = () => {
             className="contact-left text-white d-flex flex-column justify-content-between p-4 p-lg-5"
           >
             <div>
-              <h5 className="mb-2 fs-4 fs-lg-3" style={{ color: "#CEA82A" }}>
+              <h5 className="mb-2 fs-4 fs-lg-1 fw-bold" style={{ color: "#CEA82A" }}>
                 Contact Us
               </h5>
-              <h2 className="fw-bold mt-3 fs-3 fs-lg-1">Get in Touch</h2>
-              <p className="mt-3 fs-6 fs-lg-5">
+              <h2 className="fw-bold mt-3 display-4">Get in Touch</h2>
+              <p className="mt-3 fs-5 fs-lg-5">
                 Are you interested in enrolling your child at Chakravyuha Chess
                 Academy? Fill the form and we'll get in touch.
               </p>
@@ -155,7 +155,7 @@ const ContactSection = () => {
                 <Form.Control
                   className="input"
                   type="tel"
-                  name="phonenumber" // ✅ match Apps Script key
+                  name="phonenumber" 
                   placeholder="Your Phone Number"
                   value={formData.phonenumber}
                   onChange={handleChange}

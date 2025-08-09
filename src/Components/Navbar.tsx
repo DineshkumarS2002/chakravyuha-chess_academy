@@ -16,12 +16,12 @@ const Navbar: React.FC = () => {
   const menuItems = (
     <>
       <li className="nav-item">
-        <a className="nav-link nav-hover" href="#">
+        <a className="nav-link nav-hover active" href="#hero">
           Home
         </a>
       </li>
       <li className="nav-item">
-        <a className="nav-link nav-hover" href="#">
+        <a className="nav-link nav-hover" href="#about">
           About Us
         </a>
       </li>
@@ -41,19 +41,19 @@ const Navbar: React.FC = () => {
           />
         </div>
         {isCoursesOpen && (
-          <ul className="custom-dropdown bg-dark p-2 rounded mt-2 position-absolute z-3">
+          <ul className="custom-dropdown bg-dark p-2 rounded mt-2 position-absolute z-5">
             <li>
-              <a className="dropdown-item custom-dropdown-item" href="#">
+              <a className="dropdown-item custom-dropdown-item" href="#courses">
                 Beginner Chess Course
               </a>
             </li>
             <li>
-              <a className="dropdown-item custom-dropdown-item" href="#">
+              <a className="dropdown-item custom-dropdown-item" href="#courses">
                 Intermediate Chess Course
               </a>
             </li>
             <li>
-              <a className="dropdown-item custom-dropdown-item" href="#">
+              <a className="dropdown-item custom-dropdown-item" href="#courses">
                 Advanced Chess Course
               </a>
             </li>
@@ -61,12 +61,12 @@ const Navbar: React.FC = () => {
         )}
       </li>
       <li className="nav-item">
-        <a className="nav-link nav-hover" href="#">
+        <a className="nav-link nav-hover" href="#blog">
           Blog
         </a>
       </li>
       <li className="nav-item">
-        <a className="nav-link nav-hover" href="#">
+        <a className="nav-link nav-hover" href="#contact">
           Contact
         </a>
       </li>
@@ -80,9 +80,9 @@ const Navbar: React.FC = () => {
           <div className="">
             <a
               className="navbar-brand  d-flex align-items-center text-white fw-bold lh-sm"
-              href="#"
+              href="#Home"
             >
-              <img src={companylogo} alt="" />
+              <img src={companylogo} alt="" className="company-logo" />
             </a>
           </div>
 
@@ -100,7 +100,7 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="d-none d-lg-block">
-            <a href="#" className="hero-btn px-4 py-3">
+            <a href="#contact" className="hero-btn px-4 py-3">
               Get Started
             </a>
           </div>

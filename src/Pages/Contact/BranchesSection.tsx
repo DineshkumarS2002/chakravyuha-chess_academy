@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const BranchesSection: React.FC = () => {
   return (
-    <section className="py-5 text-center">
+    <section className="py-5 text-center mt-2 mt-lg-5">
       <Container>
         <p className="fs-5 fw-medium" style={{ color: "#CEA82A" }}>
           Move in Silence Only Speak With it's Time to say{" "}
@@ -20,7 +20,8 @@ const BranchesSection: React.FC = () => {
           <Col md={6} lg={4}>
             <h5 className="fw-semibold">Ariyalur Branch</h5>
             <p>
-              36/C6,Rajaji Nagar,2nd Cross,Hotel Laya Inn Back Side,Ariyalur-621-713. <br />
+              36/C6,Rajaji Nagar,2nd Cross,Hotel Laya Inn Back
+              Side,Ariyalur-621-713. <br />
               Ph.No:8870221915
             </p>
           </Col>
@@ -35,8 +36,9 @@ const BranchesSection: React.FC = () => {
 
           <Col md={6} lg={4}>
             <h5 className="fw-semibold">Coimbatore Branch</h5>
-            <p> 
-               Sitra,Coimbatore-641-014. <br /> Ph.No:8870221915</p>
+            <p>
+              Sitra,Coimbatore-641-014. <br /> Ph.No:8870221915
+            </p>
           </Col>
         </Row>
       </Container>
