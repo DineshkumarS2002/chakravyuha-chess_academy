@@ -8,7 +8,7 @@ import {
   Spinner,
   Alert,
 } from "react-bootstrap";
-// import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; // ✅ Import navigate
 import "../../Style/Contactsection.css";
 
 const ContactSection = () => {
@@ -20,6 +20,8 @@ const ContactSection = () => {
   });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  const navigate = useNavigate(); // ✅ create navigate function
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -52,13 +54,18 @@ const ContactSection = () => {
           message: "",
         });
         setSubmitted(true);
+
+        // ✅ Redirect after showing success message for 2 seconds
+        setTimeout(() => {
+          navigate("/");
+        }, 2000);
       })
       .catch((err) => alert("Error: " + err))
       .finally(() => setSubmitting(false));
   };
 
   return (
-    <section className="container px-3 px-lg-5  mt-lg-5 contact-section py-5">
+    <section className="container px-3 px-lg-5 mt-lg-5 contact-section py-5">
       <Container>
         <Row className="contact-wrapper">
           {/* Left Section */}
@@ -67,7 +74,7 @@ const ContactSection = () => {
             className="contact-left text-white d-flex flex-column justify-content-between p-4 p-lg-5"
           >
             <div>
-              <h5 className="mb-2 fw-bold contact-heading">Contact Us</h5>
+              <h5 className="mb-2 fw-bold contact-heading ">Contact Us</h5>
               <h2 className="fw-bold mt-3 contact-title">Get in Touch</h2>
               <p className="mt-3 contact-desc">
                 Are you interested in enrolling your child at Chakravyuha Chess
@@ -78,7 +85,6 @@ const ContactSection = () => {
                 <ul className="list-unstyled">
                   <li className="mb-2 d-flex align-items-center gap-2">
                     <a href="tel:+918870221915">
-                      {" "}
                       <i
                         className="fa-solid fa-phone"
                         style={{ color: "#CEA82A" }}
@@ -95,7 +101,6 @@ const ContactSection = () => {
 
                   <li className="mb-2 d-flex align-items-center gap-2">
                     <a href="mailto:chakravyuhachessacademy@gmail.com">
-                      {" "}
                       <i
                         className="fa-solid fa-envelope"
                         style={{ color: "#CEA82A" }}
@@ -198,7 +203,7 @@ const ContactSection = () => {
 
               <Button
                 type="submit"
-                className="text-black fw-semibold shadow px-4 py-3 mt-2 w-100 w-md-auto"
+                className="text-black fs-5 fw-bold shadow px-4 py-3 mt-2 w-100 w-md-auto"
                 disabled={submitting}
               >
                 {submitting ? (

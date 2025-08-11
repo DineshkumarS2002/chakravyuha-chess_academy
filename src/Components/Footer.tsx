@@ -11,7 +11,7 @@ const Footer = () => {
         <Row className="mb-4 gap-4">
           {/* Academy Info Section */}
           <Col lg={4} className="mb-4 mb-lg-0">
-            <h3 className="h3">Chakravyuha Chess Academy</h3>
+            <h3 className="h3 ">Chakravyuha Chess Academy</h3>
             <p className="mb-3" style={{ color: "#BDBDBD" }}>
               Offer online chess lessons and classes for kids, beginners, and
               intermediate players.
@@ -107,19 +107,28 @@ const Footer = () => {
           <Col lg={2} className="mb-4 mb-lg-0">
             <h4 className="h3 mb-3">Chess Courses</h4>
             <ul className="list-unstyled">
-              <li className="mb-2">
-                <a href="#" className=" text-decoration-none">
-                  Beginner Course
-                </a>
-              </li>
-              <li className="mb-2">
-                <a href="#" className=" text-decoration-none">
-                  Intermediate Course
+              <li>
+                <a
+                  className="dropdown-item custom-dropdown-item"
+                  href="/courses/beginner"
+                >
+                  Beginner Chess Course
                 </a>
               </li>
               <li>
-                <a href="#" className="text-decoration-none">
-                  Advanced Course
+                <a
+                  className="dropdown-item custom-dropdown-item"
+                  href="/courses/intermediate"
+                >
+                  Intermediate Chess Course
+                </a>
+              </li>
+              <li>
+                <a
+                  className="dropdown-item custom-dropdown-item"
+                  href="/courses/advanced"
+                >
+                  Advanced Chess Course
                 </a>
               </li>
             </ul>

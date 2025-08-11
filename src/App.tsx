@@ -12,10 +12,12 @@ import WhatsappMessage from "./Pages/whatsapp.tsx/WhatsappMessage";
 import BeginnerCourse from "./Pages/Courses/BeginnerCourse";
 import IntermediateCourse from "./Pages/Courses/IntermediateCourse";
 import AdvancedCourse from "./Pages/Courses/AdvancedChessCourse";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route
           path="/"

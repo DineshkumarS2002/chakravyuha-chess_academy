@@ -59,7 +59,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 
 const ChessFeatures = () => {
   return (
-    <div className="container py-5">
+    <div className="container mt-3 mb-5">
       <div className="row">
         <FeatureCard
           title="Cognitive & Social Skills"

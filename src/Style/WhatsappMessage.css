@@ -1,35 +1,16 @@
+/* WhatsApp Floating Image */
 .whatsapp-float-img {
-  width: 40px;
-  height: 4px;
+  width: clamp(40px, 8vw, 72px); /* min, fluid, max size */
+  height: clamp(40px, 8vw, 72px); /* keeps it a perfect circle */
   border-radius: 50%;
-  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18); */
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18); */ /* optional shadow */
 }
 
-@media (min-width: 576px) {
-  .whatsapp-float-img {
-    width: 72px;
-    height: 72px;
-  }
-}
-
-@media (min-width: 992px) {
-  .whatsapp-float-img {
-    width: 60px;
-    height: 60px;
-  }
-}
-
+/* WhatsApp Floating Button */
 .whatsapp-float-btn {
   position: fixed;
-  bottom: 24px;
-  right: 16px;
-  z-index: 2;
+  bottom: clamp(24px, 4vw, 100px); /* min, fluid, max spacing from bottom */
+  right: clamp(16px, 5vw, 40px); /* min, fluid, max spacing from right */
+  z-index: 5;
   cursor: pointer;
-}
-
-@media (min-width: 768px) {
-  .whatsapp-float-btn {
-    bottom: 100px;
-    right: 40px;
-  }
 }

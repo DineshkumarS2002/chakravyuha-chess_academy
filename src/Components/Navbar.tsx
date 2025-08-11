@@ -7,7 +7,10 @@ const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
 
-  const toggleCourses = useCallback(() => setIsCoursesOpen(prev => !prev), []);
+  const toggleCourses = useCallback(
+    () => setIsCoursesOpen((prev) => !prev),
+    []
+  );
   const closeMobileMenu = useCallback(() => {
     setIsMobileMenuOpen(false);
     setIsCoursesOpen(false);
@@ -19,72 +22,108 @@ const Navbar: React.FC = () => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
     }
-    
+
     return () => {
       document.body.style.overflow = originalStyle;
     };
   }, [isMobileMenuOpen]);
 
   // Memoized menu items to prevent unnecessary re-renders
-  const menuItems = useMemo(() => (
-    <>
-      <li className="nav-item">
-        <a className="nav-link nav-hover active" href="#hero" onClick={closeMobileMenu}>
-          Home
-        </a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link nav-hover" href="#about" onClick={closeMobileMenu}>
-          About Us
-        </a>
-      </li>
-      <li className="nav-item position-relative">
-        <div
-          className="nav-link nav-hover d-flex align-items-center gap-1"
-          role="button"
-          onClick={toggleCourses}
-        >
-          <span>Courses</span>
-          <img
-            src={arrow_icon}
-            alt="Arrow"
-            className={`arrow-icon transition ${isCoursesOpen ? "rotate" : ""}`}
-            width={14}
-            height={14}
-          />
-        </div>
-        {isCoursesOpen && (
-          <ul className="custom-dropdown bg-dark p-2 rounded mt-2 position-absolute z-5">
-            <li>
-              <a className="dropdown-item custom-dropdown-item" href="#courses" onClick={closeMobileMenu}>
-                Beginner Chess Course
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item custom-dropdown-item" href="#courses" onClick={closeMobileMenu}>
-                Intermediate Chess Course
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item custom-dropdown-item" href="#courses" onClick={closeMobileMenu}>
-                Advanced Chess Course
-              </a>
-            </li>
-          </ul>
-        )}
-      </li>
-      <li className="nav-item">
-        <a className="nav-link nav-hover" href="#blog" onClick={closeMobileMenu}>
-          Blog
-        </a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link nav-hover" href="#contact" onClick={closeMobileMenu}>
-          Contact
-        </a>
-      </li>
-    </>
-  ), [isCoursesOpen, toggleCourses, closeMobileMenu]);
+  const menuItems = useMemo(
+    () => (
+      <>
+        <li className="nav-item">
+          <a
+            className="nav-link nav-hover active"
+            href="#hero"
+            onClick={closeMobileMenu}
+          >
+            Home
+          </a>
+        </li>
+        <li className="nav-item">
+          <a
+            className="nav-link nav-hover"
+            href="#about"
+            onClick={closeMobileMenu}
+          >
+            About Us
+          </a>
+        </li>
+        <li className="nav-item position-relative">
+          <div
+            className="nav-link nav-hover d-flex align-items-center gap-1 p-0"
+            role="button"
+            onClick={toggleCourses}
+          >
+            <a href="#courses" className="nav-link nav-hover ">
+              Courses
+            </a>
+            <img
+              src={arrow_icon}
+              alt="Arrow"
+              className={`arrow-icon transition ${
+                isCoursesOpen ? "rotate" : ""
+              }`}
+              width={14}
+              height={14}
+            />
+          </div>
+
+          {isCoursesOpen && (
+            <ul className="custom-dropdown bg-dark mt-2 position-absolute z-5">
+              <li>
+                <a
+                  className="dropdown-item custom-dropdown-item"
+                  href="/courses/beginner"
+                  onClick={closeMobileMenu}
+                >
+                  Beginner Chess Course
+                </a>
+              </li>
+              <li>
+                <a
+                  className="dropdown-item custom-dropdown-item"
+                  href="/courses/intermediate"
+                  onClick={closeMobileMenu}
+                >
+                  Intermediate Chess Course
+                </a>
+              </li>
+              <li>
+                <a
+                  className="dropdown-item custom-dropdown-item"
+                  href="/courses/advanced"
+                  onClick={closeMobileMenu}
+                >
+                  Advanced Chess Course
+                </a>
+              </li>
+            </ul>
+          )}
+        </li>
+        <li className="nav-item">
+          <a
+            className="nav-link nav-hover"
+            href="#blog"
+            onClick={closeMobileMenu}
+          >
+            Blog
+          </a>
+        </li>
+        <li className="nav-item">
+          <a
+            className="nav-link nav-hover"
+            href="#contact"
+            onClick={closeMobileMenu}
+          >
+            Contact
+          </a>
+        </li>
+      </>
+    ),
+    [isCoursesOpen, toggleCourses, closeMobileMenu]
+  );
 
   return (
     <>
@@ -114,7 +153,11 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="d-none d-lg-block">
-            <a href="#contact" className="hero-btn px-4 py-3" onClick={closeMobileMenu}>
+            <a
+              href="#contact"
+              className="hero-btn px-4 py-3"
+              onClick={closeMobileMenu}
+            >
               Get Started
             </a>
           </div>
@@ -136,9 +179,7 @@ const Navbar: React.FC = () => {
           </button>
         </div>
 
-        <ul className="nav flex-column mt-4 px-3">
-          {menuItems}
-        </ul>
+        <ul className="nav flex-column mt-4 px-3">{menuItems}</ul>
       </div>
     </>
   );

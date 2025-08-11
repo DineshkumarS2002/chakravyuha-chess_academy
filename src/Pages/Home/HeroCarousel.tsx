@@ -35,29 +35,26 @@ const HeroCarousel: React.FC = () => {
             ></div>
 
             <div className="hero-overlay elementor-background-overlay" />
-            <div className="container">
+
+            <div className="container position-relative z-3">
               {/* Navbar */}
               <div className="row">
-                <div className="col py-3 px-2 px-lg-5 z-3">
+                <div className="col py-3 px-2 px-lg-5">
                   <Navbar />
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="row ">
+              {/* Hero Content */}
+              <div className="row">
                 <div className="col py-4">
-                  <div className="hero-content">
-                    <h4
-                      className="mb-2"
-                      style={{ fontSize: "clamp(18px, 2vw, 26px)" }}
-                    >
+                  <div className="hero-content  text-white">
+                    <h4 className="mb-2">
                       Welcome to Chakravyuha Chess Academy
                     </h4>
 
                     <h1
                       className="fw-bold mb-3"
                       style={{
-                        fontSize: "clamp(28px, 6vw, 60px)",
                         lineHeight: 1.2,
                       }}
                     >
@@ -68,7 +65,6 @@ const HeroCarousel: React.FC = () => {
                     <p
                       className="mb-4 mx-auto"
                       style={{
-                        fontSize: "clamp(14px, 2vw, 18px)",
                         maxWidth: "800px",
                         lineHeight: 1.6,
                       }}
@@ -80,7 +76,6 @@ const HeroCarousel: React.FC = () => {
                     <button
                       className="hero-btn fw-bold mb-3"
                       style={{
-                        fontSize: "clamp(14px, 2.5vw, 18px)",
                         padding: "0.5rem 1.25rem",
                       }}
                     >
@@ -98,6 +93,8 @@ const HeroCarousel: React.FC = () => {
           </div>
         ))}
       </div>
+
+      {/* Features Below Carousel */}
       <div className="hero-carousel-features">
         <ChessFeatures />
       </div>

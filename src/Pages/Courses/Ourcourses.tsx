@@ -38,11 +38,11 @@ const Ourcourses = () => {
       {/* Section Title */}
       <div className="row mb-5 text-center">
         <div className="col">
-          <h3 className="fw-semibold mb-2 section-subtitle">Our Courses</h3>
+          <h3 className="fw-semibold mb-2 section-subtitle fs-2">Our Courses</h3>
           <h2 className="fw-bold mb-3 section-title">
             Best Courses & Learning
           </h2>
-          <p className="section-description">
+          <p className="section-description fs-5">
             You'll find the best chess courses, series, lectures, and
             <br className="d-none d-md-block" />
             classes here for all levels of players.
@@ -83,9 +83,6 @@ const Ourcourses = () => {
 
                 {/* Course Body */}
                 <div className="card-body px-4 py-3 flex-grow-1">
-                  {/* <p className="mb-2 course-meta">
-                    Sessions: {course.sessions}
-                  </p> */}
                   <h4 className="fw-bold mb-3 course-title">{course.title}</h4>
 
                   <div className="d-flex justify-content-between align-items-start flex-wrap mb-2 fw-bold course-meta">
@@ -113,10 +110,6 @@ const Ourcourses = () => {
 
                 {/* Footer */}
                 <div className="card-footer bg-transparent border-0 px-4 pb-4 d-flex justify-content-between align-items-center">
-                  {/* <span className="fw-semibold course-rating">
-                    {course.rating}{" "}
-                    <span style={{ color: "#FFA500" }}>★★★★★</span>
-                  </span> */}
                   <Link
                     to={detailPath}
                     className="btn btn-sm fw-bold text-black px-3 py-2 w-100"
