@@ -2,6 +2,7 @@ import "../Style/Footer.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -104,32 +105,27 @@ const Footer = () => {
           </Col>
 
           {/* Course Section */}
-          <Col lg={2} className="mb-4 mb-lg-0">
-            <h4 className="h3 mb-3">Chess Courses</h4>
-            <ul className="list-unstyled">
+          <Col lg={2}>
+            <h4 className="h3">Chess Courses</h4>
+            <ul className=" bg-transparent list-unstyled">
               <li>
-                <a
-                  className="dropdown-item custom-dropdown-item"
-                  href="/courses/beginner"
+                <Link
+                  className="mt-2"
+                  to="/courses/beginner"
+                  style={{ color: "#BDBDBD" }}
                 >
                   Beginner Chess Course
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  className="dropdown-item custom-dropdown-item"
-                  href="/courses/intermediate"
-                >
+                <Link to="/courses/intermediate" style={{ color: "#BDBDBD" }}>
                   Intermediate Chess Course
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  className="dropdown-item custom-dropdown-item"
-                  href="/courses/advanced"
-                >
+                <Link to="/courses/advanced" style={{ color: "#BDBDBD" }}>
                   Advanced Chess Course
-                </a>
+                </Link>
               </li>
             </ul>
           </Col>

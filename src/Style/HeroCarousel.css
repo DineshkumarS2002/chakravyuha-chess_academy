@@ -1,12 +1,26 @@
+/* Add this at the top */
 :root {
   --e-global-color-secondary: rgba(0, 0, 0, 0.7);
+  --vh: 1vh; /* Define default value */
+}
+
+/* Fix background separation when mobile menu is open */
+body.mobile-menu-open .hero-carousel {
+  height: 100vh !important;
+  overflow: hidden;
+}
+
+/* Disable animation on mobile menu open */
+body.mobile-menu-open .hero-slide.active .hero-bg {
+  animation: none !important;
+  transform: scale(1) !important;
 }
 
 /* Carousel container */
 .hero-carousel {
   position: relative;
   width: 100%;
-  height: calc(var(--vh, 1vh) * 100) !important;
+  height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
 }
 
@@ -17,6 +31,7 @@
   opacity: 0;
   transition: opacity 1s ease-in-out;
   z-index: 0;
+  overflow: hidden; /* keeps zoom contained */
 }
 
 .hero-slide.active {
@@ -31,6 +46,7 @@
   background-size: cover;
   background-position: center;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+  will-change: transform; /* Performance optimization */
 }
 
 /* Zoom animation */
@@ -47,9 +63,24 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  @keyframes zoom-in {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.03);
+    }
+  }
+
+  /* Disable animation on mobile */
+  .hero-slide.active .hero-bg {
+    animation: none !important;
+  }
+}
+
 /* Dark overlay */
 .hero-overlay.elementor-background-overlay {
-  background-color: var(--e-global-color-secondary);
   opacity: 0.6;
   transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
   position: absolute;
@@ -74,15 +105,15 @@
   font-weight: bold;
   cursor: pointer;
   margin-bottom: 20px;
-  font-size: 16px; /* fixed px */
+  font-size: 16px;
 }
 
 .hero-content h4 {
-  font-size: 24px; /* fixed px */
+  font-size: 24px;
 }
 
 .hero-content h1 {
-  font-size: 60px; /* fixed px */
+  font-size: 60px;
   margin: 20px 0;
 }
 
@@ -91,7 +122,7 @@
 }
 
 .hero-content p {
-  font-size: 18px; /* fixed px */
+  font-size: 18px;
   margin-bottom: 20px;
 }
 
@@ -99,7 +130,7 @@
   color: white;
   font-weight: bold;
   text-decoration: none;
-  font-size: 16px; /* fixed px */
+  font-size: 16px;
 }
 
 .hero-link:hover {

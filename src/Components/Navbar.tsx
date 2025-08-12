@@ -2,8 +2,13 @@ import React, { useEffect, useState, useCallback, useMemo } from "react";
 import "../Style/Navbar.css";
 import companylogo from "../assets/companylogo.jpg";
 import arrow_icon from "../assets/arrow-icon.png";
+import { Link } from "react-router-dom";
 
-const Navbar: React.FC = () => {
+type NavbarProps = {
+  onMobileMenuToggle?: (isOpen: boolean) => void;
+};
+
+const Navbar: React.FC<NavbarProps> = ({ onMobileMenuToggle }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
 
@@ -11,20 +16,33 @@ const Navbar: React.FC = () => {
     () => setIsCoursesOpen((prev) => !prev),
     []
   );
+
   const closeMobileMenu = useCallback(() => {
     setIsMobileMenuOpen(false);
     setIsCoursesOpen(false);
-  }, []);
+    if (onMobileMenuToggle) onMobileMenuToggle(false);
+  }, [onMobileMenuToggle]);
+
+  const toggleMobileMenu = useCallback(() => {
+    const newState = !isMobileMenuOpen;
+    setIsMobileMenuOpen(newState);
+    if (onMobileMenuToggle) onMobileMenuToggle(newState);
+  }, [isMobileMenuOpen, onMobileMenuToggle]);
 
   // Handle body overflow and reset on unmount
   useEffect(() => {
     const originalStyle = window.getComputedStyle(document.body).overflow;
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
+      document.body.classList.add("mobile-menu-open");
+    } else {
+      document.body.style.overflow = originalStyle;
+      document.body.classList.remove("mobile-menu-open");
     }
 
     return () => {
       document.body.style.overflow = originalStyle;
+      document.body.classList.remove("mobile-menu-open");
     };
   }, [isMobileMenuOpen]);
 
@@ -71,33 +89,33 @@ const Navbar: React.FC = () => {
           </div>
 
           {isCoursesOpen && (
-            <ul className="custom-dropdown bg-dark mt-2 position-absolute z-5">
+            <ul className="custom-dropdown mt-2 position-absolute z-5">
               <li>
-                <a
+                <Link
                   className="dropdown-item custom-dropdown-item"
-                  href="/courses/beginner"
+                  to="/courses/beginner"
                   onClick={closeMobileMenu}
                 >
                   Beginner Chess Course
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   className="dropdown-item custom-dropdown-item"
-                  href="/courses/intermediate"
+                  to="/courses/intermediate"
                   onClick={closeMobileMenu}
                 >
                   Intermediate Chess Course
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   className="dropdown-item custom-dropdown-item"
-                  href="/courses/advanced"
+                  to="/courses/advanced"
                   onClick={closeMobileMenu}
                 >
                   Advanced Chess Course
-                </a>
+                </Link>
               </li>
             </ul>
           )}
@@ -131,7 +149,7 @@ const Navbar: React.FC = () => {
         <nav className="navbar navbar-expand-lg glass-navbar px-3 py-4">
           <div className="">
             <a
-              className="navbar-brand  d-flex align-items-center text-white fw-bold lh-sm"
+              className="navbar-brand  d-flex align-items-center text-white fw-bold "
               href="#Home"
               onClick={closeMobileMenu}
             >
@@ -142,8 +160,9 @@ const Navbar: React.FC = () => {
           <button
             className="navbar-toggler border-0"
             type="button"
-            onClick={() => setIsMobileMenuOpen(true)}
+            onClick={toggleMobileMenu}
             aria-label="Open Menu"
+            style={{ color: "#CEA82A" }}
           >
             <span className="navbar-toggler-icon" />
           </button>
@@ -166,14 +185,15 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Sidebar */}
       <div className={`mobile-menu ${isMobileMenuOpen ? "open" : ""}`}>
-        <div className="d-flex justify-content-between align-items-center px-3 pt-3">
+        <div className="d-flex justify-content-between align-items-center fs-4 px-3 pt-3">
           <span className="text-white fw-bold">
             Chakravyuha <br /> Chess Academy
           </span>
           <button
-            className="btn text-white fs-6"
+            className="btn fs-4 fw-bold"
             onClick={closeMobileMenu}
             aria-label="Close Menu"
+            style={{ color: "#CEA82A" }}
           >
             &times;
           </button>
