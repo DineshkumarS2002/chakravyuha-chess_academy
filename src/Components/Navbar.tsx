@@ -89,7 +89,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMobileMenuToggle }) => {
           </div>
 
           {isCoursesOpen && (
-            <ul className="custom-dropdown mt-2 position-absolute z-5">
+            <ul className="custom-dropdown mt-2 p-3 position-absolute z-5">
               <li>
                 <Link
                   className="dropdown-item custom-dropdown-item"
@@ -146,7 +146,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMobileMenuToggle }) => {
   return (
     <>
       <div className="px-0">
-        <nav className="navbar navbar-expand-lg glass-navbar px-3 py-4">
+        <nav className="navbar navbar-expand-lg  glass-navbar px-3 py-4">
           <div className="">
             <a
               className="navbar-brand  d-flex align-items-center text-white fw-bold "

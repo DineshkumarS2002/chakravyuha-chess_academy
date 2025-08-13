@@ -5,6 +5,8 @@ import image3 from "../../assets/Carousel 3.jpeg";
 import "../../Style/HeroCarousel.css";
 import Navbar from "../../Components/Navbar";
 import ChessFeatures from "./Features";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const HeroCarousel: React.FC = () => {
   const images = [image1, image2, image3];
@@ -23,7 +25,6 @@ const HeroCarousel: React.FC = () => {
       );
     }, 5000);
 
-    // Mark carousel as inactive after one full loop
     const totalTime = images.length * 5000;
     const timer = setTimeout(() => {
       setIsCarouselActive(false);
@@ -38,11 +39,10 @@ const HeroCarousel: React.FC = () => {
   // Auto-hide navbar on small devices
   useEffect(() => {
     const handleScroll = () => {
-      if (window.innerWidth > 768) return; // Skip for larger screens
+      if (window.innerWidth > 768) return;
 
       const currentScrollY = window.scrollY;
 
-      // Don't hide navbar if mobile menu is open
       if (isMobileMenuOpen) {
         setShowNavbar(true);
         return;
@@ -50,20 +50,18 @@ const HeroCarousel: React.FC = () => {
 
       if (!isCarouselActive) {
         if (currentScrollY > lastScrollY.current) {
-          setShowNavbar(false); // Scrolling down
+          setShowNavbar(false);
         } else {
-          setShowNavbar(true); // Scrolling up
+          setShowNavbar(true);
         }
       }
       lastScrollY.current = currentScrollY;
     };
 
     const handleResize = () => {
-      // Always show navbar on larger screens
       if (window.innerWidth > 768) {
         setShowNavbar(true);
       } else {
-        // Reset navbar state on resize to small screens
         setShowNavbar(true);
         lastScrollY.current = window.scrollY;
       }
@@ -71,8 +69,6 @@ const HeroCarousel: React.FC = () => {
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
-
-    // Initial check on mount
     handleResize();
 
     return () => {
@@ -81,7 +77,7 @@ const HeroCarousel: React.FC = () => {
     };
   }, [isCarouselActive, isMobileMenuOpen]);
 
-  // Fix for background image separation
+  // Fix viewport height
   useEffect(() => {
     const updateCarouselHeight = () => {
       if (carouselRef.current) {
@@ -98,6 +94,19 @@ const HeroCarousel: React.FC = () => {
     };
   }, []);
 
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+    });
+  }, []);
+
+  // Refresh AOS when slide changes
+  useEffect(() => {
+    AOS.refresh();
+  }, [currentIndex]);
+
   return (
     <>
       <div className="hero-carousel" ref={carouselRef}>
@@ -113,7 +122,8 @@ const HeroCarousel: React.FC = () => {
               }}
             ></div>
 
-            <div className="hero-overlay elementor-background-overlay" />
+            {/* Dark overlay */}
+            <div className="hero-overlay elementor-background-overlay"></div>
 
             <div className="container position-relative z-3">
               {/* Navbar */}
@@ -129,34 +139,47 @@ const HeroCarousel: React.FC = () => {
               <div className="row">
                 <div className="col py-4">
                   <div className="hero-content text-white">
-                    <h4 className="mb-2">
-                      Welcome to Chakravyuha Chess Academy
-                    </h4>
-
-                    <h1 className="fw-bold mb-3" style={{ lineHeight: 1.2 }}>
-                      Think Like{" "}
-                      <span className="text-warning">Grandmaster</span>
-                    </h1>
-
-                    <p
-                      className="mb-4 mx-auto"
-                      style={{ maxWidth: "800px", lineHeight: 1.6 }}
+                    <div
+                      data-aos="fade-right"
+                      data-aos-offset="300"
+                      data-aos-easing="ease-in-sine"
                     >
-                      Do you want to learn chess? Chakravyuha Chess Academy
-                      offers customized chess training for Basic, Intermediate,
-                      and Advanced level students.
-                    </p>
-                    <button
-                      className="hero-btn fw-bold mb-3"
-                      style={{ padding: "0.5rem 1.25rem" }}
-                    >
-                      <a
-                        href="#courses"
-                        className="text-black text-decoration-none"
+                      <h4 className="mb-2">
+                        Welcome to Chakravyuha Chess Academy
+                      </h4>
+
+                      <h1 className="fw-bold mb-3" style={{ lineHeight: 1.2 }}>
+                        Think Like{" "}
+                        <span className="text-warning">Grandmaster</span>
+                      </h1>
+
+                      <p
+                        className="mb-4 mx-auto text-secondary "
+                        style={{ maxWidth: "800px", lineHeight: 1.6 }}
                       >
-                        Join Now
-                      </a>
-                    </button>
+                        Do you want to learn chess? Chakravyuha Chess Academy
+                        offers customized chess training for Basic,
+                        Intermediate, and Advanced level students.
+                      </p>
+                    </div>
+
+                    <div
+                      data-aos="fade-left"
+                      data-aos-offset="100"
+                      data-aos-easing="ease-in-sine"
+                    >
+                      <button
+                        className="hero-btn fw-bold mb-3"
+                        style={{ padding: "0.5rem 1.25rem" }}
+                      >
+                        <a
+                          href="#courses"
+                          className="text-black text-decoration-none"
+                        >
+                          Join Now
+                        </a>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

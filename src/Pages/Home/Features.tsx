@@ -1,3 +1,5 @@
+import React from "react";
+
 const features1 = [
   "Enhances Memory Performance",
   "Sharpens Decision-Making Skills",
@@ -21,6 +23,7 @@ type FeatureCardProps = {
   description?: string;
   animation: string;
   light?: boolean;
+  aos?: { [key: string]: string | number };
 };
 
 const FeatureCard: React.FC<FeatureCardProps> = ({
@@ -28,27 +31,27 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   icon,
   items,
   description,
-
   light = false,
+  aos = {},
 }) => {
   const cardStyle = light
     ? { backgroundColor: "#111", color: "white" }
     : { backgroundColor: "#fff", color: "#000" };
 
   return (
-    <div className={"col-md-4 mb-4 g-0"}>
-      <div className="p-4 h-100 text-center " style={cardStyle}>
+    <div className="col-md-4 mb-4 g-0" {...aos}>
+      <div className="p-4 h-100 text-center" style={cardStyle}>
         <div className="mb-3 d-flex justify-content-center">{icon}</div>
         <h4 className="fw-bold">{title}</h4>
         {items && (
-          <ul className="mt-3 text-start ps-3 " style={{ fontSize: "18px" }}>
+          <ul className="mt-3 text-start ps-3" style={{ fontSize: "18px" }}>
             {items.map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
           </ul>
         )}
         {description && (
-          <p className="mt-3 " style={{ fontSize: "18px" }}>
+          <p className="mt-3" style={{ fontSize: "18px" }}>
             {description}
           </p>
         )}
@@ -61,6 +64,7 @@ const ChessFeatures = () => {
   return (
     <div className="container mt-3 mb-5">
       <div className="row">
+        {/* Left Card */}
         <FeatureCard
           title="Cognitive & Social Skills"
           icon={
@@ -72,7 +76,13 @@ const ChessFeatures = () => {
           items={features1}
           animation="animate__fadeInDown"
           light={true}
+          aos={{
+            "data-aos": "fade-down",
+            "data-aos-duration": "1000",
+          }}
         />
+
+        {/* Center Card */}
         <FeatureCard
           title="Emotional & Strategic Growth"
           icon={
@@ -83,7 +93,14 @@ const ChessFeatures = () => {
           }
           items={features2}
           animation="animate__fadeInUp"
+          aos={{
+            "data-aos": "fade-up",
+            "data-aos-easing": "linear",
+            "data-aos-duration": "1000",
+          }}
         />
+
+        {/* Right Card */}
         <FeatureCard
           title="Free Demo Classes"
           icon={
@@ -95,6 +112,10 @@ const ChessFeatures = () => {
           description="For new aspirants, we offer free demo chess classes so they can experience the extraordinary Chakravyuha Chess Academy journey for themselves."
           animation="animate__fadeInDown"
           light={true}
+          aos={{
+            "data-aos": "fade-down",
+            "data-aos-duration": "1000",
+          }}
         />
       </div>
     </div>

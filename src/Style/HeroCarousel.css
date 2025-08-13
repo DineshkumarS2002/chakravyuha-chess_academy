@@ -1,16 +1,13 @@
-/* Add this at the top */
 :root {
   --e-global-color-secondary: rgba(0, 0, 0, 0.7);
-  --vh: 1vh; /* Define default value */
+  --vh: 1vh;
 }
 
-/* Fix background separation when mobile menu is open */
+/* Mobile menu open fix */
 body.mobile-menu-open .hero-carousel {
   height: 100vh !important;
   overflow: hidden;
 }
-
-/* Disable animation on mobile menu open */
 body.mobile-menu-open .hero-slide.active .hero-bg {
   animation: none !important;
   transform: scale(1) !important;
@@ -24,36 +21,32 @@ body.mobile-menu-open .hero-slide.active .hero-bg {
   overflow: hidden;
 }
 
-/* Individual slide */
+/* Slides */
 .hero-slide {
   position: absolute;
   inset: 0;
   opacity: 0;
   transition: opacity 1s ease-in-out;
   z-index: 0;
-  overflow: hidden; /* keeps zoom contained */
+  overflow: hidden;
 }
-
 .hero-slide.active {
   opacity: 1;
   z-index: 1;
 }
 
-/* Background image */
+/* Background */
 .hero-bg {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
-  will-change: transform; /* Performance optimization */
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+  will-change: transform;
 }
-
-/* Zoom animation */
 .hero-slide.active .hero-bg {
   animation: zoom-in 5s ease-in-out forwards;
 }
-
 @keyframes zoom-in {
   0% {
     transform: scale(1);
@@ -62,7 +55,6 @@ body.mobile-menu-open .hero-slide.active .hero-bg {
     transform: scale(1.1);
   }
 }
-
 @media screen and (max-width: 768px) {
   @keyframes zoom-in {
     0% {
@@ -72,23 +64,21 @@ body.mobile-menu-open .hero-slide.active .hero-bg {
       transform: scale(1.03);
     }
   }
-
-  /* Disable animation on mobile */
-  .hero-slide.active .hero-bg {
-    animation: none !important;
-  }
 }
 
-/* Dark overlay */
+/* Background overlay */
 .hero-overlay.elementor-background-overlay {
-  opacity: 0.6;
-  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
   position: absolute;
   inset: 0;
+  background: var(--e-global-color-secondary);
+  backdrop-filter: blur(40px); /* subtle blur */
+  -webkit-backdrop-filter: blur(40px);
+  opacity: 0.6;
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
   z-index: 1;
 }
 
-/* Content styling */
+/* Content */
 .hero-content {
   position: relative;
   z-index: 3;
@@ -96,7 +86,6 @@ body.mobile-menu-open .hero-slide.active .hero-bg {
   padding: 80px 40px;
   max-width: 600px;
 }
-
 .hero-btn {
   background-color: #cea82a;
   color: black;
@@ -107,43 +96,28 @@ body.mobile-menu-open .hero-slide.active .hero-bg {
   margin-bottom: 20px;
   font-size: 16px;
 }
-
 .hero-content h4 {
   font-size: 24px;
 }
-
 .hero-content h1 {
   font-size: 60px;
   margin: 20px 0;
 }
-
 .hero-content h1 span {
   color: #f2c744;
 }
-
 .hero-content p {
   font-size: 18px;
   margin-bottom: 20px;
 }
 
-.hero-link {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.hero-link:hover {
-  color: #f2c744;
-}
-
-/* Navbar overlay fix */
+/* Navbar fix */
 .navhover {
   z-index: 10;
   position: relative;
 }
 
-/* Features section under carousel */
+/* Features section */
 .hero-carousel-features {
   position: relative;
   bottom: 120px;
@@ -155,42 +129,35 @@ body.mobile-menu-open .hero-slide.active .hero-bg {
   z-index: 3;
 }
 
-/* Mobile adjustments */
+/* Mobile */
 @media screen and (max-width: 768px) {
   .hero-content {
     padding: 60px 20px;
     text-align: center;
     max-width: 100%;
   }
-
   .hero-content h4 {
     font-size: 20px;
   }
-
   .hero-content h1 {
     font-size: 36px;
     margin: 15px 0;
   }
-
   .hero-content p {
     font-size: 16px;
   }
-
   .hero-btn {
     padding: 12px 24px;
     font-size: 14px;
   }
-
   .hero-link {
     display: inline-block;
     margin-top: 10px;
     font-size: 14px;
   }
-
   .hero-bg {
     background-position: center top;
   }
-
   .hero-carousel-features {
     bottom: 60px;
   }

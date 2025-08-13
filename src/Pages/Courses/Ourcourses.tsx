@@ -38,11 +38,23 @@ const Ourcourses = () => {
       {/* Section Title */}
       <div className="row mb-5 text-center">
         <div className="col">
-          <h3 className="fw-semibold mb-2 section-subtitle fs-2">Our Courses</h3>
-          <h2 className="fw-bold mb-3 section-title">
+          <h3 className="fw-semibold mb-2 section-subtitle fs-2">
+            Our Courses
+          </h3>
+          <h2
+            className="fw-bold mb-3 section-title"
+            data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+          >
             Best Courses & Learning
           </h2>
-          <p className="section-description fs-5">
+          <p
+            className="section-description fs-5"
+            data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+          >
             You'll find the best chess courses, series, lectures, and
             <br className="d-none d-md-block" />
             classes here for all levels of players.
@@ -61,8 +73,34 @@ const Ourcourses = () => {
           else if (course.title.includes("Advanced"))
             detailPath = "/courses/advanced";
 
+          // Determine animation direction based on column position
+          let aosProps = {};
+          if (index % 3 === 0) {
+            // Left column
+            aosProps = {
+              "data-aos": "fade-left",
+              "data-aos-duration": "1500",
+            };
+          } else if (index % 3 === 1) {
+            // Center column
+            aosProps = {
+              "data-aos": "fade-up",
+              "data-aos-duration": "1500",
+            };
+          } else {
+            // Right column
+            aosProps = {
+              "data-aos": "fade-right",
+              "data-aos-duration": "1500",
+            };
+          }
+
           return (
-            <div key={index} className="col-sm-12 col-md-6 col-lg-4">
+            <div
+              key={index}
+              className="col-sm-12 col-md-6 col-lg-4"
+              {...aosProps}
+            >
               <div
                 className={`card h-100 border-0 shadow-sm overflow-hidden d-flex flex-column ${
                   course.dark ? "bg-dark text-white" : ""

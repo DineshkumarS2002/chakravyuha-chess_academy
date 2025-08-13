@@ -22,17 +22,19 @@
   /* background-color: rgba(17, 17, 17, 0.95); */
   border: none;
   padding: 0.75rem 1.25rem;
+  list-style: none;
+
 }
 
 .custom-dropdown-item {
   color: white;
   padding: 0.5rem 0;
-  background-color: transparent;
+  background-color: black;
 }
 
 .custom-dropdown-item:hover {
   color: #d4af37;
-  background-color: transparent;
+  background-color: black;
 }
 
 /* Button */

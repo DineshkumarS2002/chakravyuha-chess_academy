@@ -1,7 +1,7 @@
 /* WhatsApp Floating Image */
 .whatsapp-float-img {
-  width: clamp(40px, 8vw, 72px); /* min, fluid, max size */
-  height: clamp(40px, 8vw, 72px); /* keeps it a perfect circle */
+  width: clamp(40px, 20vw, 60px); /* min, fluid, max size */
+  height: clamp(40px,20vw, 60px); /* keeps it a perfect circle */
   border-radius: 50%;
   /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18); */ /* optional shadow */
 }
@@ -9,8 +9,8 @@
 /* WhatsApp Floating Button */
 .whatsapp-float-btn {
   position: fixed;
-  bottom: clamp(24px, 4vw, 100px); /* min, fluid, max spacing from bottom */
-  right: clamp(16px, 5vw, 40px); /* min, fluid, max spacing from right */
+  bottom: clamp(100px, 4vw, 100px); /* min, fluid, max spacing from bottom */
+  right: clamp(16px, 6vw, 25px); /* min, fluid, max spacing from right */
   z-index: 5;
   cursor: pointer;
 }
