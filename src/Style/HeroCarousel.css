@@ -1,42 +1,52 @@
 :root {
   --e-global-color-secondary: rgba(0, 0, 0, 0.7);
+  --vh: 1vh;
 }
 
+/* Mobile menu open fix */
+body.mobile-menu-open .hero-carousel {
+  height: 100vh !important;
+  overflow: hidden;
+}
+body.mobile-menu-open .hero-slide.active .hero-bg {
+  animation: none !important;
+  transform: scale(1) !important;
+}
+
+/* Carousel container */
 .hero-carousel {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
 }
 
+/* Slides */
 .hero-slide {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   opacity: 0;
   transition: opacity 1s ease-in-out;
-  top: 0;
-  left: 0;
+  z-index: 0;
+  overflow: hidden;
 }
-
 .hero-slide.active {
   opacity: 1;
   z-index: 1;
 }
 
+/* Background */
 .hero-bg {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background-size: cover;
   background-position: center;
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+  will-change: transform;
 }
-
 .hero-slide.active .hero-bg {
   animation: zoom-in 5s ease-in-out forwards;
 }
-
 @keyframes zoom-in {
   0% {
     transform: scale(1);
@@ -45,100 +55,110 @@
     transform: scale(1.1);
   }
 }
+@media screen and (max-width: 768px) {
+  @keyframes zoom-in {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.03);
+    }
+  }
+}
 
+/* Background overlay */
 .hero-overlay.elementor-background-overlay {
-  background-color: var(--e-global-color-secondary);
+  position: absolute;
+  inset: 0;
+  background: var(--e-global-color-secondary);
+  backdrop-filter: blur(40px); /* subtle blur */
+  -webkit-backdrop-filter: blur(40px);
   opacity: 0.6;
   transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   z-index: 1;
 }
 
+/* Content */
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   color: white;
   padding: 80px 40px;
   max-width: 600px;
 }
-
 .hero-btn {
-  background-color: #f2c744;
+  background-color: #cea82a;
+  color: black;
   border: none;
-  padding: 10px 20px;
+  padding: 20px 40px;
   font-weight: bold;
   cursor: pointer;
   margin-bottom: 20px;
+  font-size: 16px;
 }
-
 .hero-content h4 {
-  font-size: 1.5rem;
+  font-size: 24px;
 }
-
 .hero-content h1 {
-  font-size: 3rem;
+  font-size: 60px;
   margin: 20px 0;
 }
-
 .hero-content h1 span {
   color: #f2c744;
 }
-
 .hero-content p {
-  font-size: 1rem;
+  font-size: 18px;
   margin-bottom: 20px;
 }
 
-.hero-link {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  /* border-bottom: 1px solid white; */
-}
-.hero-link:hover {
-  color: #f2c744;
-  /* text-decoration: underline; */
+/* Navbar fix */
+.navhover {
+  z-index: 10;
+  position: relative;
 }
 
+/* Features section */
+.hero-carousel-features {
+  position: relative;
+  bottom: 120px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+/* Mobile */
 @media screen and (max-width: 768px) {
   .hero-content {
     padding: 60px 20px;
     text-align: center;
     max-width: 100%;
   }
-
   .hero-content h4 {
-    font-size: 1.2rem;
+    font-size: 20px;
   }
-
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: 36px;
     margin: 15px 0;
   }
-
   .hero-content p {
-    font-size: 0.95rem;
+    font-size: 16px;
   }
-
   .hero-btn {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+    padding: 12px 24px;
+    font-size: 14px;
   }
-
   .hero-link {
     display: inline-block;
     margin-top: 10px;
+    font-size: 14px;
   }
-
   .hero-bg {
     background-position: center top;
   }
-}
-/*  */
-.navhover {
-  z-index: 10;
+  .hero-carousel-features {
+    bottom: 60px;
+  }
 }
