@@ -21,8 +21,7 @@ const ContactSection = () => {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const navigate = useNavigate(); // ✅ create navigate function
-
+  const navigate = useNavigate();
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -36,7 +35,7 @@ const ContactSection = () => {
     setSubmitted(false);
 
     fetch(
-      "https://script.google.com/macros/s/AKfycbxCTD6s5kaOCBLpuUT79743C8vNu-lKBEZ4F6tbRBM7cHSh5wiYuKiEKNsQxptOJE5C/exec",
+      "https://script.google.com/macros/s/AKfycbyeOPzbvhVvXlUqROhG-ObYH-Roa3nCV2GYKrxzP_qb3RYERJUdU0n6DB8j4W6010kCyQ/exec",
       {
         method: "POST",
         mode: "no-cors",
@@ -107,24 +106,22 @@ const ContactSection = () => {
                       ></i>
                     </a>
                     <a
-                      href="mailto:chakravyuhachessacademy@gmail.com"
+                      href="mailto: ccachakravyuhachessacademy@gmail.com"
                       className="fw-semibold text-decoration-none"
                       style={{ color: "#fff" }}
                     >
-                      chakravyuhachessacademy@gmail.com
+                      ccachakravyuhachessacademy@gmail.com
                     </a>
                   </li>
 
                   <li className="d-flex align-items-center gap-2">
-                    <a href="https://www.google.com/maps?q=Coimbatore,+Tamil+Nadu">
+                    <a>
                       <i
                         className="fa-solid fa-location-dot"
                         style={{ color: "#CEA82A" }}
                       ></i>
                     </a>
                     <a
-                      href="https://www.google.com/maps?q=Coimbatore,+Tamil+Nadu"
-                      target="_blank"
                       rel="noopener noreferrer"
                       className="fw-semibold text-decoration-none"
                       style={{ color: "#fff" }}

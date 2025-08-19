@@ -2,13 +2,16 @@ import whatsappicon from "../../assets/whatsapp.png";
 import "../../Style/WhatsappMessage.css";
 
 const WhatsappMessage = () => {
-  const whatsappNumber = "916381830479";
+
+  const whatsappNumber = "918870221915";
+
   const message = encodeURIComponent(
     "Hello! I am interested in your chess academy. Please share more details."
   );
 
   const handleClick = () => {
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+    const url = `https://wa.me/${whatsappNumber}?text=${message}`;
+    window.open(url, "_blank");
   };
 
   return (

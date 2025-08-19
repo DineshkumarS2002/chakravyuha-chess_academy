@@ -1,10 +1,10 @@
-import {  Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "../../Style/Classpage.css";
 
 const Classpage = () => {
   return (
     <section className="classpage-hero d-flex  ">
-      <div  className="container-fluid text-white classpage-content ">
+      <div className="container-fluid text-white classpage-content ">
         {/* Title */}
         <h1
           className="classpage-title mb-3"
@@ -27,9 +27,9 @@ const Classpage = () => {
           data-aos-delay="275"
           data-aos-easing="ease-in-sine"
         >
-          Become a better chess player with online & offline chess lessons from
-          top coaches and masters. Get online Chess Coaching for kids &
-          scholastic students of beginner, intermediate and advanced levels.
+          "Master the game of chess with expert coaching - online or offline!
+          Fun, interactive lessons for kids and students at all levels - from
+          beginner to champion."
         </p>
 
         {/* Button */}

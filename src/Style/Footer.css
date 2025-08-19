@@ -5,10 +5,10 @@ footer {
 footer a {
   text-decoration: none;
   transition: color 0.3s;
-  color: #BDBDBD;;
+  color: #bdbdbd;
 }
 footer a:hover {
-  color: #ffc107;
+  color: #cea82a;
 }
 footer ul li {
   margin-bottom: 0.5rem;
@@ -43,4 +43,19 @@ footer ul li {
 }
 .social-youtube {
   background: #ff0000;
+}
+.course-name {
+  color: #bdbdbd;
+}
+.course-name:hover {
+  color: #cea82a;
+}
+.address {
+  color: #bdbdbd;
+}
+.address:hover {
+  color: #cea82a;
+}
+.address-icon{
+   color: #cea82a;
 }
