@@ -14,30 +14,23 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: "Chess – A Game that Enhances Intelligence",
+    title: "Tournament Triumphs",
     description:
-      "Chess is not just a game; it is a workout for the brain. In our academy, children learn to think with focus, plan strategically, and develop a competitive spirit. With quality training, they excel not only in academics but also in life.",
+      " Our players brought home multiple trophies, medals, and certificates, proving their skill and dedication.",
     image: blogimg1,
   },
   {
     id: 2,
-    title: "5 Secrets to Winning a Chess Match",
-    description: (
-      <ul className="mb-0">
-        <li>Use your time wisely</li>
-        <li>Think 3 moves ahead</li>
-        <li>Observe your opponent’s weaknesses</li>
-        <li>Learn from your losses</li>
-        <li>Manage stress effectively</li>
-      </ul>
-    ),
+    title: "State & National Glory",
+    description:
+      " Several students represented our academy at the 67th National School Games – Chess Championship, showcasing exceptional strategic play.",
     image: blogimg2,
   },
   {
     id: 3,
-    title: "Recent Academy Achievements",
+    title: "Skills Beyond the Board",
     description:
-      "In last month’s district chess tournament, our students won 3 gold, 2 silver, and 1 bronze medals. 🏆 Best Player Award — Adithya (U14) 🥈 Second Place — Nandhini (U12) These victories are the result of our structured training and dedicated hard work.",
+      "Alongside the accolades, our players gained invaluable skills in focus, decision-making, and sportsmanship.",
     image: blogimg3,
   },
 ];

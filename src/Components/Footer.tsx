@@ -21,50 +21,36 @@ const Footer = () => {
               <li className="mb-2 d-flex align-items-center gap-2">
                 <a href="tel:+918870221915">
                   {" "}
-                  <i
-                    className="fa-solid fa-phone"
-                    style={{ color: "#CEA82A" }}
-                  ></i>
+                  <i className="fa-solid fa-phone address-icon"></i>
                 </a>
                 <a
                   href="tel:+918870221915"
-                  className="fw-semibold text-decoration-none"
-                  style={{ color: "#BDBDBD" }}
+                  className="fw-semibold text-decoration-none address"
                 >
                   +91 88702 21915
                 </a>
               </li>
 
               <li className="mb-2 d-flex align-items-center gap-2">
-                <a href="mailto:chakravyuhachessacademy@gmail.com">
+                <a href="mailto:ccachakravyuhachessacademy@gmail.com">
                   {" "}
-                  <i
-                    className="fa-solid fa-envelope"
-                    style={{ color: "#CEA82A" }}
-                  ></i>
+                  <i className="fa-solid fa-envelope address-icon"></i>
                 </a>
                 <a
-                  href="mailto:chakravyuhachessacademy@gmail.com"
-                  className="fw-semibold text-decoration-none"
-                  style={{ color: "#BDBDBD" }}
+                  href="mailto:ccachakravyuhachessacademy@gmail.com"
+                  className="fw-semibold text-decoration-none address"
                 >
-                  chakravyuhachessacademy@gmail.com
+                  ccachakravyuhachessacademy@gmail.com
                 </a>
               </li>
 
               <li className="d-flex align-items-center gap-2">
-                <a href="https://www.google.com/maps?q=Coimbatore,+Tamil+Nadu">
-                  <i
-                    className="fa-solid fa-location-dot"
-                    style={{ color: "#CEA82A" }}
-                  ></i>
+                <a>
+                  <i className="fa-solid fa-location-dot address-icon"></i>
                 </a>
                 <a
-                  href="https://www.google.com/maps?q=Coimbatore,+Tamil+Nadu"
-                  target="_blank"
                   rel="noopener noreferrer"
-                  className="fw-semibold text-decoration-none"
-                  style={{ color: "#BDBDBD" }}
+                  className="fw-semibold text-decoration-none address"
                 >
                   Coimbatore, Tamil Nadu
                 </a>
@@ -109,21 +95,17 @@ const Footer = () => {
             <h4 className="h3">Chess Courses</h4>
             <ul className=" bg-transparent list-unstyled">
               <li>
-                <Link
-                  className="mt-2"
-                  to="/courses/beginner"
-                  style={{ color: "#BDBDBD" }}
-                >
+                <Link className="mt-2 course-name" to="/courses/beginner">
                   Beginner Chess Course
                 </Link>
               </li>
               <li>
-                <Link to="/courses/intermediate" style={{ color: "#BDBDBD" }}>
+                <Link to="/courses/intermediate" className="course-name">
                   Intermediate Chess Course
                 </Link>
               </li>
               <li>
-                <Link to="/courses/advanced" style={{ color: "#BDBDBD" }}>
+                <Link to="/courses/advanced" className="course-name">
                   Advanced Chess Course
                 </Link>
               </li>
@@ -134,21 +116,23 @@ const Footer = () => {
           <Col lg={3}>
             <h4 className="h3 mb-3">Our Social Media</h4>
             <div className="d-flex">
-              <a href="#" className="icon social-facebook me-3">
+              <a
+                href="https://www.facebook.com/share/16ng2Vv8GG/"
+                className="icon social-facebook me-3"
+              >
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a
-                href="#"
-                className="icon social-x me-3 box-shadow"
-                aria-label="X (Twitter)"
-              >
-                <i className="fa-brands fa-x-twitter"></i>
-              </a>
 
-              <a href="#" className="icon social-instagram me-3">
+              <a
+                href="https://www.instagram.com/chakravyuhachessacademy?utm_source=qr&igsh=andqb3ZsNnhjdmx2"
+                className="icon social-instagram me-3"
+              >
                 <i className="fab fa-instagram"></i>
               </a>
-              <a href="#" className="icon social-youtube">
+              <a
+                href="https://www.instagram.com/chakravyuhachessacademy?utm_source=qr&igsh=andqb3ZsNnhjdmx2"
+                className="icon social-youtube"
+              >
                 <i className="fab fa-youtube"></i>
               </a>
             </div>

@@ -76,7 +76,7 @@ const AboutUs = () => {
           <div role="img" aria-label="Chess academy image">
             <img
               src={aboutbg}
-              className="img-fluid w-100 about-image"
+              className="img-fluid w-100  about-image"
               alt="About Chakravyuha Chess Academy"
               loading="lazy"
             />
@@ -103,11 +103,44 @@ const AboutUs = () => {
             data-aos-offset="300"
             data-aos-easing="ease-in-sine"
           >
-            The Chakravyuha Chess Academy has trained chess players to National,
-            State, and District levels. We've produced over 40 FIDE-rated
-            players and numerous national and state champions.
+            Chakravyuha Chess Academy is one of the leading chess academies in
+            Tamil Nadu. It was originally founded in 2012 in Ariyalur by
+            International Rated Player Mr. S. Vijayabaskar and Mrs. Ananthi
+            under the name Warriors Chess Academy. The academy was later renamed
+            to Chakravyuha Chess Academy.
           </p>
-
+          <p
+            className="about-subtitles"
+            data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+          >
+            Since its inception, we have been dedicated to promoting chess by
+            creating awareness in schools and organizing numerous district-level
+            chess tournaments. Over the years, we have successfully trained and
+            developed more than 40 rated players, as well as multiple state and
+            district champions.
+          </p>
+          <p
+            className="about-subtitles"
+            data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+          >
+            Our proud achievements include producing champions like Miss
+            Priyanjana-National Gold Medalist, Miss Yuvanthika-state-level
+            winner; and many other district-level champions.
+          </p>
+          <p
+            className="about-subtitles"
+            data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+          >
+            At Chakravyuha Chess Academy, we continue to nurture talent, instill
+            discipline, and inspire a passion for the game of chess in players
+            of all ages.
+          </p>
           {/* Stats with staggered animation */}
           <div className="d-flex flex-wrap gap-4 mb-4">
             {stats.map((stat, index) => (

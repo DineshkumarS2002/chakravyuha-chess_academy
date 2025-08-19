@@ -10,16 +10,13 @@ const courses = [
     image: img1,
     sessions: 8,
     duration: "1 hour",
-    classesPerWeek: "2 classes per week",
-    rating: 4.9,
   },
   {
     title: "Intermediate Chess Course",
     image: img2,
     sessions: 8,
     duration: "1 hour",
-    classesPerWeek: "2 classes per week",
-    rating: 4.9,
+
     dark: true,
   },
   {
@@ -27,8 +24,6 @@ const courses = [
     image: img3,
     sessions: 8,
     duration: "1 hour",
-    classesPerWeek: "2 classes per week",
-    rating: 4.9,
   },
 ];
 
@@ -140,9 +135,10 @@ const Ourcourses = () => {
                     </p>
                   </div>
 
-                  <div className="d-flex justify-content-between align-items-center flex-wrap course-meta">
-                    <p className="mb-1">Number of Classes: 8</p>
-                    <p className="mb-1">{course.classesPerWeek}</p>
+                  <div className="d-flex  justify-content-between align-items-center flex-wrap course-meta">
+                    <p className="mb-1 fw-semibold">
+                      Number of Classes: <span> 8/10/12 & Customized</span>
+                    </p>
                   </div>
                 </div>
 

@@ -276,7 +276,7 @@ const BeginnerCourse = () => {
                         className="fa-solid fa-clock "
                         style={{ color: "#CEA82A" }}
                       ></i>{" "}
-                      Duration: 1 Hour | 2 Classes / Week
+                      Duration: 1 Hour
                     </li>
                     <li className="mt-3">
                       <i
