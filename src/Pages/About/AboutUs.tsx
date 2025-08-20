@@ -105,7 +105,7 @@ const AboutUs = () => {
           >
             Chakravyuha Chess Academy is one of the leading chess academies in
             Tamil Nadu. It was originally founded in 2012 in Ariyalur by
-            International Rated Player Mr. S. Vijayabaskar and Mrs. Ananthi
+            International FIDE Rated Player Mr. S. Vijayabaskar and Mrs. Ananthi
             under the name Warriors Chess Academy. The academy was later renamed
             to Chakravyuha Chess Academy.
           </p>
@@ -118,7 +118,7 @@ const AboutUs = () => {
             Since its inception, we have been dedicated to promoting chess by
             creating awareness in schools and organizing numerous district-level
             chess tournaments. Over the years, we have successfully trained and
-            developed more than 40 rated players, as well as multiple state and
+            developed more than 40 FIDE rated players, as well as multiple state and
             district champions.
           </p>
           <p
