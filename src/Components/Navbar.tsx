@@ -53,7 +53,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMobileMenuToggle }) => {
         <li className="nav-item">
           <a
             className="nav-link nav-hover active"
-            href="#hero"
+            href="/"
             onClick={closeMobileMenu}
           >
             Home

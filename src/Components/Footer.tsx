@@ -63,7 +63,7 @@ const Footer = () => {
             <h2 className="h3 mb-3">Quick Links</h2>
             <ul className="list-unstyled">
               <li className="mb-2">
-                <a href="#home" className="text-decoration-none">
+                <a href="/" className="text-decoration-none">
                   Home
                 </a>
               </li>
