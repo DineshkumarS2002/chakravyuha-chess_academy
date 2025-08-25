@@ -286,7 +286,7 @@ const BeginnerCourse = () => {
                         className="fa-solid fa-clock "
                         style={{ color: "#CEA82A" }}
                       ></i>{" "}
-                      Duration: 1 Hour 
+                      Duration: 1 Hour
                     </li>
                     <li className="mt-3">
                       <i
@@ -322,7 +322,7 @@ const BeginnerCourse = () => {
                     <Button
                       className="w-100 fs-5 p-3 fw-bold mt-3"
                       style={{ backgroundColor: "#25D366", color: "white" }}
-                      href="https://wa.me/916381830479?text=Hello%21%20I%20am%20interested%20in%20your%20chess%20academy.%20Please%20share%20more%20details."
+                      href="https://wa.me/918870221915?text=Hello%21%20I%20am%20interested%20in%20your%20chess%20academy.%20Please%20share%20more%20details."
                       target="_blank"
                       rel="noopener noreferrer"
                     >
