@@ -13,7 +13,7 @@ import BeginnerCourse from "./Pages/Courses/BeginnerCourse";
 import IntermediateCourse from "./Pages/Courses/IntermediateCourse";
 import AdvancedCourse from "./Pages/Courses/AdvancedChessCourse";
 import ScrollToTop from "./Components/ScrollToTop";
-import TawkChat from "./Pages/whatsapp.tsx/TawkChat";
+// import TawkChat from "./Pages/whatsapp.tsx/TawkChat";
 
 function App() {
   return (
@@ -44,7 +44,7 @@ function App() {
                 <BranchesSection />
               </div>
               <div>
-                <TawkChat />
+                {/* <TawkChat /> */}
               </div>
               <div>
                 <WhatsappMessage />
