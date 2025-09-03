@@ -106,11 +106,9 @@ const Ourcourses = () => {
                   <img
                     src={course.image}
                     loading="lazy"
-                    width="100%"
-                    height="230"
-                    className="w-100 rounded-3"
+                    className="img-fluid w-100 rounded-3"
                     alt={course.title}
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: "cover", height: "230px" }}
                   />
                 </div>
 
